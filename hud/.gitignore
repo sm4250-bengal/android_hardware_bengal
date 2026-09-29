@@ -1,0 +1,4 @@
+# `cargo build` writes here when CARGO_TARGET_DIR is not set. It never belongs
+# in the repo: Soong builds from Android.bp and does not read Cargo.toml at all.
+/target/
+/Cargo.lock

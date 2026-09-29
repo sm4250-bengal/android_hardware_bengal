@@ -1,0 +1,69 @@
+<!--
+    VINTF fragment for the D18 vendor daemon. Rides the module's
+    vintf_fragments: property, so a declaration can never ship without its
+    binary — the rule bengal3/manifest.xml states and that device 1 broke
+    (654 lines, six HALs declared with no registrant).
+
+    CORRECTED 2026-08-30 (docs/research/2026-08-30-d18-app-hal-binding.md §6.3).
+    This header used to say "NO <version> ELEMENT for an AIDL hal: assemble_vintf
+    takes the version from the aidl_interface's frozen version". The practice was
+    harmless at V1; the reason was wrong, and the wrong reason hides a trap.
+
+    What libvintf actually does: it stores every AIDL version as
+    {majorVer = kFakeAidlMajorVersion (SIZE_MAX), minorVer = N}
+    (system/libvintf/parse_string.cpp:544-547), and when the <version> tag is
+    ABSENT it inserts kDefaultAidlVersionRange = {SIZE_MAX,
+    kDefaultAidlMinorVersion} with kDefaultAidlMinorVersion = 1
+    (include/vintf/constants.h:41, parse_xml.cpp:681-690). So "no tag" and
+    "<version>1</version>" are the same object and assemble_vintf supplies
+    nothing. The tag is written out below anyway, for the reason that matters:
+
+    FROM V2 THE TAG STOPS BEING COSMETIC, and this fragment and
+    platform/device/xyauto/bengal3/framework_compatibility_matrix.xml must then
+    carry the SAME explicit version. checkUnusedHals matches them with
+    mat.matchInstance() (system/libvintf/HalManifest.cpp:349-375), so a fragment
+    left at the implicit 1 against a matrix that says 2 fails the build with
+    "not specified in framework compatibility matrix" — a message that points at
+    the matrix, not at the missing tag. Lineage writes the version in both
+    halves for exactly this reason (vendor.lineage.powershare-service.default.xml
+    and compatibility_matrix.lineage.xml:27-34). Keep the two in step.
+
+    AND THE FREEZE IS NOT OPTIONAL. RELEASE_AIDL_USE_UNFROZEN is false in this
+    release config. For an interface with a previous frozen version that means a
+    silent downgrade (the mechanism bengal3/device.mk documents for clearkey);
+    for one with NO frozen version AssembleVintf.cpp:463-501 REMOVES the
+    manifest entry outright, and
+    says why in its own comment:
+    "this ensures service manager will deny registration". Run
+    the matching `*-freeze-api` target must run before wiring an interface into
+    any product. All four interfaces declared below have frozen snapshots.
+-->
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.xyauto.fm</name>
+        <version>1</version>
+        <fqname>IFmRadio/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xyauto.hud</name>
+        <!-- V3 adds typed physical button actions and independent listeners.
+             Keep the frozen snapshot and framework matrix in lockstep. -->
+        <version>3</version>
+        <fqname>IHud/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xyauto.audio</name>
+        <version>3</version>
+        <fqname>IAudioGuard/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xyauto.dsp</name>
+        <version>4</version>
+        <fqname>IDsp/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.xyauto.can</name>
+        <version>4</version>
+        <fqname>ICanMonitor/default</fqname>
+    </hal>
+</manifest>

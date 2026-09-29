@@ -1,0 +1,481 @@
+# XinPu / Volkswagen / "Volkswagen ALL (Fault-tolerant, Old high-speed)"
+#
+# The one profile v1 ships. Transcoded from the OEM plugin, NOT copied:
+#   OEM database   plugin/can1_023.json  maker 2 "XinPu", brand 9 "Volkswagen", model 2
+#   OEM plugin     plugin/2/9/P1_301.apk  sha256 37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91
+#                  user id 2009002 (CanbusUser_P.XinPu_Dasauto_ALL), baud 38400,
+#                  request 0x90 (CanbusConfig_P) -- documented below, NEVER sent
+#   decoders       XinPu_Dasauto_CarInfo.initDataState (0x41/0x02),
+#                  CanbusKey_P.xinPu_Dasauto_ALL_Key (0x20), CanbusDoor_P (0x41/0x01),
+#                  CanbusBack_P.XinPu_Dasauto_ALL (0x26 steering angle)
+#   evidence notes archive/reference/device12/hardware/xyauto_can/evidence/XINPU_VW_PQ_PROFILE.md,
+#                  docs/research/2026-09-05-canbus-oem-app-and-protocol.md §3,
+#                  docs/research/2026-09-11-can-vw-pq-parity-plan.md §2 (key states and
+#                  radar ids below were corrected there against the plugin bytecode)
+#   the box        Simple Soft RP5-VW-001 / VW-SS-07 (VW/Skoda/Seat PQ), photographed
+#                  on device 1 in the user's car; the car is a 2013 Polo 6R 1.2 TDI
+#                  (older notes said 2014; the PQ25 selection is the same)
+#
+# EVERY FIELD IS UNVERIFIED. A first passive in-car capture now exists
+# (the read is recorded in docs/research/2026-09-11-can-vw-pq-parity-plan.md §10),
+# including 0x41/03 and 0x37 frames, but no field is promoted without physical
+# ground truth for its meaning. These offsets and scales are the OEM plugin's
+# decode contract; `verified` flips per field only when a capture shows the
+# value coherent against a known vehicle state.
+#
+# Format: the TOML subset in hud/src/can/profile.rs (strings, integers, bools,
+# single-line arrays, [tables], [[arrays of tables]]; no inline tables/floats).
+
+id = "xinpu-vw-pq"
+display = "XinPu / Volkswagen / Volkswagen ALL (Fault-tolerant, Old high-speed)"
+oem_user = 2009002
+oem_plugin = "plugin/2/9/P1_301.apk"
+oem_plugin_sha256 = "37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91"
+envelope = "raise-2e"
+baud = 38400
+request = 0x90
+verified = false
+
+# ---------------------------------------------------------------- keys ----
+# Frame 0x20: DATA = [code, state]. The OEM plugin mapped these to the MCU's
+# key vocabulary (12 vol+, 13 vol-, 10 next, 11 prev, 15 phone, 5 mute,
+# 7 source, 80 voice) and injected them through NewkeypadMonitor; we name the
+# ACTION and let the app bind it (docs/issues/can/issues/05-hucan-app.md).
+#
+# States: UP = 0, DOWN = 1, LONG_PRESS = 2 -- the plugin's
+# com.canbus.json.key.KeyState (KeyState.<clinit> at dex 0x047b28 stores 0/1/2;
+# CanbusKey_P.sendKey reads DOWN and LONG_PRESS). The earlier table here
+# (down 1, up 2, long 3, rotate 4) was the plugin's UNUSED ENUM_KEY.KEY_STATE;
+# with it a real long press (02) read as "up" and a real release (00) had no
+# name. There is no rotate state in this box's table, so none is listed.
+# Consumer: hud/src/can/keys.rs (reads these names, never the numbers).
+[keys]
+type = 0x20
+
+[keys.states]
+up = 0
+down = 1
+long = 2
+
+[[keys.map]]
+code = 1
+action = "VOLUME_UP"
+[[keys.map]]
+code = 2
+action = "VOLUME_DOWN"
+[[keys.map]]
+code = 3
+action = "NEXT"
+[[keys.map]]
+code = 19
+action = "NEXT"
+[[keys.map]]
+code = 4
+action = "PREVIOUS"
+[[keys.map]]
+code = 20
+action = "PREVIOUS"
+[[keys.map]]
+code = 5
+action = "PHONE"
+[[keys.map]]
+code = 6
+action = "MUTE"
+[[keys.map]]
+code = 7
+action = "SOURCE"
+[[keys.map]]
+code = 8
+action = "VOICE"
+
+# ------------------------------------------------------------ messages ----
+# 0x41/0x02 — vehicle status (XinPu_Dasauto_CarInfo.initDataState):
+#   DATA[1..2]  engine speed, big-endian, rpm
+#   DATA[3..4]  vehicle speed, big-endian × 0.01 km/h
+#   DATA[5..6]  battery voltage, big-endian × 0.01 V
+#   DATA[7..8]  outside temperature, big-endian signed × 0.1 °C
+#   DATA[9..11] odometer, big-endian, km
+#   DATA[12]    fuel, litres
+[[messages]]
+type = 0x41
+subtype = 0x02
+name = "vehicle"
+min_len = 13
+
+[[messages.fields]]
+name = "engine_rpm"
+offset = 1
+width = 2
+endian = "be"
+unit = "rpm"
+verified = false
+
+[[messages.fields]]
+name = "speed"
+offset = 3
+width = 2
+endian = "be"
+scale_num = 1
+scale_den = 100
+unit = "km/h"
+verified = false
+
+[[messages.fields]]
+name = "battery_voltage"
+offset = 5
+width = 2
+endian = "be"
+scale_num = 1
+scale_den = 100
+unit = "V"
+verified = false
+
+[[messages.fields]]
+name = "outside_temperature"
+offset = 7
+width = 2
+endian = "be"
+signed = true
+scale_num = 1
+scale_den = 10
+unit = "degC"
+verified = false
+
+[[messages.fields]]
+name = "odometer"
+offset = 9
+width = 3
+endian = "be"
+unit = "km"
+verified = false
+
+[[messages.fields]]
+name = "fuel"
+offset = 12
+width = 1
+unit = "l"
+verified = false
+
+# 0x41/0x01 — door flags (DATA[1] bits 0..4: FL, FR, RL, RR, trunk)
+[[messages]]
+type = 0x41
+subtype = 0x01
+name = "doors"
+min_len = 2
+
+[[messages.fields]]
+name = "door_front_left"
+offset = 1
+bit = 0
+unit = "flag"
+[[messages.fields]]
+name = "door_front_right"
+offset = 1
+bit = 1
+unit = "flag"
+[[messages.fields]]
+name = "door_rear_left"
+offset = 1
+bit = 2
+unit = "flag"
+[[messages.fields]]
+name = "door_rear_right"
+offset = 1
+bit = 3
+unit = "flag"
+[[messages.fields]]
+name = "trunk"
+offset = 1
+bit = 4
+unit = "flag"
+
+# 0x41/0x03 — vehicle alerts (plugin guard: 2 bytes). D1 bit 7 is low fuel;
+# D1 bit 6 is low battery. The remaining bits are not assigned here. The
+# legacy flags_raw signal remains alongside these semantic fields.
+[[messages]]
+type = 0x41
+subtype = 0x03
+name = "vehicle_flags"
+min_len = 2
+
+[[messages.fields]]
+name = "flags_raw"
+offset = 1
+width = 1
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "low_fuel"
+offset = 1
+bit = 7
+unit = "flag"
+verified = false
+
+[[messages.fields]]
+name = "low_battery"
+offset = 1
+bit = 6
+unit = "flag"
+verified = false
+
+# 0x7d/0x03 — trip speeds. D1..D2 is instantaneous speed and D3..D4 is
+# average speed, both little-endian hundredths of km/h. XinPu's turn-signal
+# subtype 0x01 is deliberately not added: it is disabled for this user.
+# The profile retains exact hundredths and renders fractional values. The OEM
+# CanbusLight_P broadcast path integer-divides by 100; retaining the fraction
+# here is intentional snapshot precision, not a claim of byte-for-byte parity
+# with that broadcast's display value.
+[[messages]]
+type = 0x7d
+subtype = 0x03
+name = "trip_speeds"
+min_len = 5
+
+[[messages.fields]]
+name = "instantaneous_speed"
+offset = 1
+width = 2
+endian = "le"
+scale_num = 1
+scale_den = 100
+unit = "km/h"
+verified = false
+
+[[messages.fields]]
+name = "average_speed"
+offset = 3
+width = 2
+endian = "le"
+scale_num = 1
+scale_den = 100
+unit = "km/h"
+verified = false
+
+# 0x26 — steering angle, LITTLE-endian raw (CanbusBack_P.XinPu_Dasauto_ALL:
+# value = DATA[1]*256 + DATA[0]; 0..10000 one direction, 65536-x the other).
+# Kept raw: the plugin only feeds it to the trajectory overlay.
+[[messages]]
+type = 0x26
+name = "steering"
+min_len = 2
+
+[[messages.fields]]
+name = "steering_angle_raw"
+offset = 0
+width = 2
+endian = "le"
+unit = "raw"
+
+# 0x22 / 0x23 — REAR / FRONT parking radar, four sensors each, raw values.
+# The plugin's car_radar_2009002.json maps "dataType":"22" (hex) to BACK_LEFT,
+# BACK_MIDDLE_LEFT, BACK_MIDDLE_RIGHT, BACK_RIGHT and "23" to FRONT_* in the
+# same order; the Golf7 decoder, the smartgauges Raise-VW-PQ emulator and a
+# second vendor's Raise-VW driver agree (parity plan §1). Earlier notes and this
+# file had front and rear swapped. The plugin reads each byte as a level: its
+# index in 00..0A (0-10), anything else invalid. Kept raw until a capture shows
+# which end of the scale is "near".
+[[messages]]
+type = 0x22
+name = "radar_rear"
+min_len = 4
+
+[[messages.fields]]
+name = "radar_rear_left"
+offset = 0
+unit = "raw"
+[[messages.fields]]
+name = "radar_rear_left_mid"
+offset = 1
+unit = "raw"
+[[messages.fields]]
+name = "radar_rear_right_mid"
+offset = 2
+unit = "raw"
+[[messages.fields]]
+name = "radar_rear_right"
+offset = 3
+unit = "raw"
+
+[[messages]]
+type = 0x23
+name = "radar_front"
+min_len = 4
+
+[[messages.fields]]
+name = "radar_front_left"
+offset = 0
+unit = "raw"
+[[messages.fields]]
+name = "radar_front_left_mid"
+offset = 1
+unit = "raw"
+[[messages.fields]]
+name = "radar_front_right_mid"
+offset = 2
+unit = "raw"
+[[messages.fields]]
+name = "radar_front_right"
+offset = 3
+unit = "raw"
+
+# 0x21 — climate status (plugin guard 5 bytes; the AirConditionerView bit
+# layout is not transcoded yet -- captured raw).
+[[messages]]
+type = 0x21
+name = "climate"
+min_len = 5
+
+[[messages.fields]]
+name = "climate_raw0"
+offset = 0
+unit = "raw"
+[[messages.fields]]
+name = "climate_raw1"
+offset = 1
+unit = "raw"
+[[messages.fields]]
+name = "climate_raw2"
+offset = 2
+unit = "raw"
+[[messages.fields]]
+name = "climate_raw3"
+offset = 3
+unit = "raw"
+[[messages.fields]]
+name = "climate_raw4"
+offset = 4
+unit = "raw"
+
+# 0x27 — OEM amplifier state (8 bytes, AmpActivity / car_amp_2009002.json).
+# All values remain raw profile indices; this does not claim physical gain or
+# a dB scale. D0 is the amplifier type, D1 volume, D2 balance, D3 fader,
+# D4 bass, D5 mid, D6 treble, and D7 speed-dependent volume.
+# amp_raw0 and amp_raw1 remain as legacy raw aliases for compatibility.
+[[messages]]
+type = 0x27
+name = "amplifier"
+min_len = 8
+
+[[messages.fields]]
+name = "amp_raw0"
+offset = 0
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "amp_raw1"
+offset = 1
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_type"
+offset = 0
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_volume"
+offset = 1
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_balance"
+offset = 2
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_fader"
+offset = 3
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_bass"
+offset = 4
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_mid"
+offset = 5
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_treble"
+offset = 6
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "oem_amp_speed_dependent_volume"
+offset = 7
+unit = "raw"
+verified = false
+
+# 0x37 — tyre status flags (3 bytes, XinPu_Dasauto_Tire). D0 bit 4 is the
+# detection fault; bits 3..0 are abnormal FL, FR, RL, RR respectively. No
+# pressure measurement is invented because this plugin supplies none. The
+# legacy tyre_flags_raw0/1/2 signals retain every original byte, including
+# calibration bits 7..5.
+[[messages]]
+type = 0x37
+name = "tyres"
+min_len = 3
+
+[[messages.fields]]
+name = "tyre_flags_raw0"
+offset = 0
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "tyre_flags_raw1"
+offset = 1
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "tyre_flags_raw2"
+offset = 2
+unit = "raw"
+verified = false
+
+[[messages.fields]]
+name = "detection_fault"
+offset = 0
+bit = 4
+unit = "flag"
+verified = false
+
+[[messages.fields]]
+name = "tyre_front_left_abnormal"
+offset = 0
+bit = 3
+unit = "flag"
+verified = false
+
+[[messages.fields]]
+name = "tyre_front_right_abnormal"
+offset = 0
+bit = 2
+unit = "flag"
+verified = false
+
+[[messages.fields]]
+name = "tyre_rear_left_abnormal"
+offset = 0
+bit = 1
+unit = "flag"
+verified = false
+
+[[messages.fields]]
+name = "tyre_rear_right_abnormal"
+offset = 0
+bit = 0
+unit = "flag"
+verified = false

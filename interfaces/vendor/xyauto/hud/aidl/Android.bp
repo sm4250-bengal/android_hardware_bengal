@@ -1,0 +1,83 @@
+// Copyright (C) 2026 The XYAUTO device-3 project
+// SPDX-License-Identifier: Apache-2.0
+//
+// vendor.xyauto.hud — vehicle-state, keys, USB and GPIO observation from the
+// single D18 vendor daemon.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+aidl_interface {
+    name: "vendor.xyauto.hud",
+    vendor_available: true,
+    srcs: ["vendor/xyauto/hud/*.aidl"],
+    stability: "vintf",
+
+    // UNFROZEN ON PURPOSE: no Android build has generated an API snapshot.
+    // RELEASE_AIDL_USE_UNFROZEN=false removes an unfrozen V1 HAL from the
+    // assembled manifest, so this module MUST NOT enter PRODUCT_PACKAGES yet.
+    // In an announced build window run exactly:
+    //
+    //   m vendor.xyauto.hud-freeze-api
+    //
+    // Then commit the generated tree (do not manufacture it by hand):
+    //
+    //   aidl_api/vendor.xyauto.hud/1/.hash
+    //   aidl_api/vendor.xyauto.hud/1/vendor/xyauto/hud/*.aidl
+    //   aidl_api/vendor.xyauto.hud/current/vendor/xyauto/hud/*.aidl
+    //
+    // and change `frozen` to true in that same commit. The VINTF fragment and
+    // framework matrix already say version 1; all three move together at V2.
+    //
+    // FROZEN AT V1 on 2026-08-31, in the first build window, together with
+    // aidl_api/vendor.xyauto.hud/{current,1}/ (16 interfaces, parcelables and
+    // enums, plus the 1/.hash marker). This line and `versions_with_info` below
+    // were written by Soong — `m vendor.xyauto.hud-freeze-api` edits this file
+    // itself, and the edit reached our repo through the per-file mirror symlink.
+    //
+    // Two targets, not one: `-update-api` first (creates current/; without it the
+    // interface does not build at all, checkapi_current fails), then
+    // `-freeze-api` (creates 1/). The larger IHud surface froze without an
+    // AIDL-stability complaint, so the `@VintfStability` annotations on all 14
+    // parcelables/enums were already right.
+    //
+    // The cost of staying unfrozen, measured rather than argued (Stage 2.1),
+    // verbatim from assemble_vintf:
+    //   INFO: Removing HAL from the manifest because it is declaring V1 of a new
+    //   unfrozen interface which is not allowed in this release configuration:
+    //   vendor.xyauto.hud
+    frozen: true,
+
+    backend: {
+        rust: {
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        cpp: {
+            enabled: false,
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+        {
+            version: "2",
+            imports: [],
+        },
+        {
+            version: "3",
+            imports: [],
+        },
+
+    ],
+
+}

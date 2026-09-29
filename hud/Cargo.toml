@@ -1,0 +1,70 @@
+# DESK ONLY. The Android build does NOT read this file — Soong reads Android.bp.
+#
+# It exists so the hardware core can be built and unit-tested on a plain Linux
+# host, offline, in a second, without a 200 GB Android tree and without the
+# build window the lead has to schedule:
+#
+#     cargo build --offline
+#     cargo test  --offline
+#
+# ZERO DEPENDENCIES, deliberately. There is no [dependencies] section and there
+# will not be one: adding a crate here means either vendoring it into this repo
+# or a network fetch, and it would also have to exist as a Soong module in
+# external/rust/android-crates-io/ to be usable in the real build. `libc` is not
+# needed — src/i2c/rdwr.rs declares the one `ioctl` it uses.
+#
+# The default build includes an inert binary plus the complete service core.
+# src/main.rs and src/binder.rs only reach libbinder_rs and the Soong-generated
+# vendor.xyauto.hud-V1-rust crate when the Android-only `binder` feature is on.
+# Cargo deliberately leaves that feature off, so host tests cannot open Binder
+# or board hardware and still need no external crates.
+#
+# Edition 2021 and nothing newer than Rust 1.85 std, because the Android build
+# uses prebuilts/rust/linux-x86/1.88.0 while this desk has 1.98 — see the note
+# in src/lib.rs and mem:rust-198-breaks-kernel-build.
+
+[package]
+name = "bengal_hud"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "Device-3 (XYAUTO/Podofo SM4250) vendor daemon — hardware core"
+
+[lib]
+name = "bengal_hud"
+path = "src/lib.rs"
+
+[features]
+default = []
+# Explicit source inclusion; Soong adds the frozen V1 AIDL dependency only
+# with its matching bengal_hud.acc_power_channel selection. Unit tests still
+# compile the isolated channel core through cfg(test), without Binder.
+acc-power-channel = []
+# Android-only adapter. Cargo's default feature set deliberately leaves this
+# off because libbinder_rs and vendor.xyauto.hud-V1-rust are Soong modules, not
+# crates.io dependencies. Android.bp enables it on libbengal_hud.
+binder = []
+# Test-only Binder adapter harness. Soong never enables this; the desk script
+# supplies ABI-shaped Binder/AIDL stubs and runs its semantic controls.
+binder-desk = []
+# The IDsp V2 control methods in src/dsp/binder.rs.
+#
+# OFF until root freezes vendor.xyauto.dsp V2 and moves the `-V2-rust` pin in
+# Android.bp: the generated `IDsp` trait is the frozen snapshot's, so an impl
+# carrying the V2 methods cannot compile against a V1 pin — nor against the
+# desk harness's stub, which is generated from the SAME frozen snapshot. Root
+# turns this on in the one change that bumps the pin. Everything the feature
+# guards is field copying; the logic it calls is in src/dsp/controls.rs and is
+# covered by `cargo test` whether the feature is on or off.
+dsp-v2 = []
+# Parent enables this only with the real V3 freeze and Android.bp consumer pins.
+dsp-v3 = ["dsp-v2"]
+dsp-v4 = ["dsp-v3"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

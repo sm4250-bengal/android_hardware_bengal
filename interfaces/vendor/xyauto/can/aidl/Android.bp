@@ -1,0 +1,49 @@
+// SPDX-License-Identifier: Apache-2.0
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+aidl_interface {
+    name: "vendor.xyauto.can",
+    vendor_available: true,
+    srcs: ["vendor/xyauto/can/*.aidl"],
+    stability: "vintf",
+    // V4 was generated and frozen by the Lineage 24 AIDL targets. Future
+    // changes must use update-api/freeze-api, never hand-edit snapshot hashes.
+    frozen: true,
+    backend: {
+        rust: {
+            enabled: true,
+        },
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+        cpp: {
+            enabled: false,
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+        {
+            version: "2",
+            imports: [],
+        },
+        {
+            version: "3",
+            imports: [],
+        },
+        {
+            version: "4",
+            imports: [],
+        },
+
+    ],
+
+}

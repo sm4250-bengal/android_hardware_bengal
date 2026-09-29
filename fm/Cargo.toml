@@ -1,0 +1,31 @@
+# DESK ONLY. Soong reads Android.bp, not this file.
+#
+# The default build is pure and host-testable. `linux-i2c` adds the real
+# /dev/i2c-N I2C_RDWR adapter without adding a crates.io dependency.
+
+[package]
+name = "xyauto_fm"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "QN8035 core and AIDL-shaped service layer for bengal-hud"
+
+[lib]
+name = "xyauto_fm"
+path = "src/lib.rs"
+
+[features]
+default = []
+acc-power-channel = []
+linux-i2c = []
+# Android-only generated-AIDL adapter. Soong supplies libbinder_rs and
+# vendor.xyauto.fm-V1-rust; default Cargo deliberately has neither dependency.
+binder = []
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

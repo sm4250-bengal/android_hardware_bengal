@@ -1,0 +1,19 @@
+// Native protocol core. No daemon or product feature is installed by this.
+cc_library_static {
+    name: "libbengal_loc",
+    vendor: true,
+    srcs: ["loc.c", "position.c", "satellite.c", "qrtr-transport.c"],
+    export_include_dirs: ["."],
+    shared_libs: ["libqrtr"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+// Manual diagnostic only; deliberately absent from PRODUCT_PACKAGES.
+cc_binary {
+    name: "bengal3-loc-probe",
+    vendor: true,
+    srcs: ["main.c"],
+    static_libs: ["libbengal_loc"],
+    shared_libs: ["libqrtr"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}

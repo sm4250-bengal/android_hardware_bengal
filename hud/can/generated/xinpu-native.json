@@ -1,0 +1,3638 @@
+{
+  "apk_sha256": "37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91",
+  "compiler_sha256": "291c712ba7c58228d35e1e1f1b92f34535cd19b2f525be4c8230654facf93677",
+  "model_dispatch": "sources/com/kyhero/car/myplugin/MainActivity_P.java:onIconViewClick",
+  "physical_acceptance": false,
+  "plugin": "2/9/P1_301.apk",
+  "profiles": [
+    {
+      "apk_sha256": "37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91",
+      "brand_id": "9",
+      "controls": [
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.0",
+          "kind": "choice",
+          "label": "ESC",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                16,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Activate",
+              "payload": [
+                16,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "ESC Movement",
+              "payload": [
+                16,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 16,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[0]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.1",
+          "kind": "choice",
+          "label": "Speed ​​alarm",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                32,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                32,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 32,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[1]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.2",
+          "kind": "choice",
+          "label": "Reset tire pressure",
+          "options": [
+            {
+              "label": "Calibrate",
+              "payload": [
+                34,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[2]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.3",
+          "kind": "choice",
+          "label": "Direct tire pressure monitoring",
+          "options": [
+            {
+              "label": "Comfortable",
+              "payload": [
+                35,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Standard",
+              "payload": [
+                35,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Fully loaded",
+              "payload": [
+                35,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 32,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[3]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.4",
+          "kind": "choice",
+          "label": "Adaptive Lane Guidance",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                48,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                48,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 48,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[4]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.5",
+          "kind": "choice",
+          "label": "Lane Keep Assist",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                54,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                54,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 48,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[5]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.6",
+          "kind": "choice",
+          "label": "Fatigue driving recognition system",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                49,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                49,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 48,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[6]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.7",
+          "kind": "choice",
+          "label": "Last selected car distance",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                50,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                50,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 49,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[7]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.8",
+          "kind": "choice",
+          "label": "Front assist system",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                51,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                51,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 49,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[8]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.9",
+          "kind": "choice",
+          "label": "Seat heating level",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                52,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                52,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 2,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 49,
+          "rx_min_length": true,
+          "rx_start_bit": 2,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[9]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.10",
+          "kind": "choice",
+          "label": "Display distance alarm",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                53,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                53,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 49,
+          "rx_min_length": true,
+          "rx_start_bit": 3,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[10]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.11",
+          "kind": "choice",
+          "label": "ACC-driving program",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                55,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                55,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                55,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 49,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[11]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.12",
+          "kind": "choice",
+          "label": "ACC-car distance",
+          "options": [
+            {
+              "label": "Extremely small",
+              "payload": [
+                56,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Small",
+              "payload": [
+                56,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Medium",
+              "payload": [
+                56,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "large",
+              "payload": [
+                56,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            },
+            {
+              "label": "Great",
+              "payload": [
+                56,
+                4
+              ],
+              "tx_type": 198,
+              "value": 4
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 49,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[12]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.13",
+          "kind": "choice",
+          "label": "Automatic activation",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                64,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                64,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 64,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[13]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.14",
+          "kind": "choice",
+          "label": "Activate",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                69,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                69,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 64,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[14]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.15",
+          "kind": "choice",
+          "label": "On time",
+          "options": [
+            {
+              "label": "advance",
+              "payload": [
+                80,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Timely",
+              "payload": [
+                80,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Snooze",
+              "payload": [
+                80,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 80,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[15]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.16",
+          "kind": "choice",
+          "label": "Automatic running lights (rainy day)",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                81,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                81,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 4,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 80,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[16]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.17",
+          "kind": "choice",
+          "label": "Lane change indicator",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                82,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                82,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 5,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 80,
+          "rx_min_length": true,
+          "rx_start_bit": 5,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[17]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.18",
+          "kind": "choice",
+          "label": "Daytime running lights",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                200,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                200,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 6,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 80,
+          "rx_min_length": true,
+          "rx_start_bit": 6,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[18]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.19",
+          "kind": "choice",
+          "label": "Travel Mode",
+          "options": [
+            {
+              "label": "Right",
+              "payload": [
+                86,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Left",
+              "payload": [
+                86,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 81,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[19]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.20",
+          "kind": "choice",
+          "label": "Dynamic Light Assist",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                90,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                90,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 4,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 81,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[20]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.21",
+          "kind": "choice",
+          "label": "Dynamic headlight follow-up",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                89,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                89,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 4,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 81,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[21]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.22",
+          "kind": "choice",
+          "label": "Light color",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                94,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "white",
+              "payload": [
+                94,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "orange",
+              "payload": [
+                94,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "Blue",
+              "payload": [
+                94,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 82,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[22]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.23",
+          "kind": "choice",
+          "label": "Mirror synchronization adjustment",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                96,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                96,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 96,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[23]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.24",
+          "kind": "choice",
+          "label": "Mirror lowers when reverse gear",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                97,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                97,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 96,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[24]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.25",
+          "kind": "choice",
+          "label": "Auto wipe in rain",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                98,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                98,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 2,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 96,
+          "rx_min_length": true,
+          "rx_start_bit": 2,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[25]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.26",
+          "kind": "choice",
+          "label": "Rear windshield wiper in reverse gear",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                99,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                99,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 96,
+          "rx_min_length": true,
+          "rx_start_bit": 3,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[26]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.27",
+          "kind": "choice",
+          "label": "Internal folding while parking",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                100,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                100,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 96,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[27]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.28",
+          "kind": "choice",
+          "label": "Windows open easily",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                112,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "driver",
+              "payload": [
+                112,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "All windows",
+              "payload": [
+                112,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 112,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[28]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.29",
+          "kind": "choice",
+          "label": "Central door lock",
+          "options": [
+            {
+              "label": "Vehicle side",
+              "payload": [
+                113,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Single door",
+              "payload": [
+                113,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "All doors",
+              "payload": [
+                113,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 112,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[29]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.30",
+          "kind": "choice",
+          "label": "Auto lock",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                114,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                114,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 112,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[30]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.31",
+          "kind": "choice",
+          "label": "Induction tailgate",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                115,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                115,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 112,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[31]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.32",
+          "kind": "choice",
+          "label": "Audio confirmation",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                201,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                201,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 112,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[32]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.33",
+          "kind": "choice",
+          "label": "Current fuel consumption",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                128,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                128,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[33]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.34",
+          "kind": "choice",
+          "label": "Average fuel consumption",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                129,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                129,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[34]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.35",
+          "kind": "choice",
+          "label": "Comfort appliances",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                130,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                130,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 2,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 2,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[35]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.36",
+          "kind": "choice",
+          "label": "Economic operation reminder",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                131,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                131,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 3,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[36]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.37",
+          "kind": "choice",
+          "label": "Travel Time",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                132,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                132,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 4,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[37]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.38",
+          "kind": "choice",
+          "label": "Mileage",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                133,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                133,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 5,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 5,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[38]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.39",
+          "kind": "choice",
+          "label": "Average speed",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                134,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                134,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 6,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 6,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[39]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.40",
+          "kind": "choice",
+          "label": "Digital vehicle speed display",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                135,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                135,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 7,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[40]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.41",
+          "kind": "choice",
+          "label": "Speed ​​alarm",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                136,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                136,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[41]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.42",
+          "kind": "choice",
+          "label": "Oil temperature",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                137,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                137,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 128,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[42]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.43",
+          "kind": "choice",
+          "label": "Mileage",
+          "options": [
+            {
+              "label": "km",
+              "payload": [
+                144,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "m",
+              "payload": [
+                144,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[43]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.44",
+          "kind": "choice",
+          "label": "Car speed",
+          "options": [
+            {
+              "label": "km/h",
+              "payload": [
+                145,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "mph",
+              "payload": [
+                145,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[44]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.45",
+          "kind": "choice",
+          "label": "Temperature",
+          "options": [
+            {
+              "label": "Celsius",
+              "payload": [
+                146,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Fahrenheit",
+              "payload": [
+                146,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 2,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 2,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[45]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.46",
+          "kind": "choice",
+          "label": "Volume",
+          "options": [
+            {
+              "label": "L",
+              "payload": [
+                147,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "gal(UK)",
+              "payload": [
+                147,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "gal(US)",
+              "payload": [
+                147,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[46]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.47",
+          "kind": "choice",
+          "label": "Fuel consumption",
+          "options": [
+            {
+              "label": "mpg(UK)",
+              "payload": [
+                148,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "L/100km",
+              "payload": [
+                148,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "mpg(US)",
+              "payload": [
+                148,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "km/L",
+              "payload": [
+                148,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[47]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.48",
+          "kind": "choice",
+          "label": "Tire pressure",
+          "options": [
+            {
+              "label": "bar",
+              "payload": [
+                149,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "psi",
+              "payload": [
+                149,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "kpa",
+              "payload": [
+                149,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[48]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.49",
+          "kind": "choice",
+          "label": "Body MODE button command",
+          "options": [
+            {
+              "label": "release",
+              "payload": [
+                207,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Press",
+              "payload": [
+                207,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 4,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 160,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[49]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.50",
+          "kind": "choice",
+          "label": "Drive Mode",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                208,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                208,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                208,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "Personalization",
+              "payload": [
+                208,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            },
+            {
+              "label": "Snow",
+              "payload": [
+                208,
+                4
+              ],
+              "tx_type": 198,
+              "value": 4
+            },
+            {
+              "label": "Off-Road",
+              "payload": [
+                208,
+                5
+              ],
+              "tx_type": 198,
+              "value": 5
+            },
+            {
+              "label": "Off-Road Personalization",
+              "payload": [
+                208,
+                6
+              ],
+              "tx_type": 198,
+              "value": 6
+            },
+            {
+              "label": "Comfortable",
+              "payload": [
+                208,
+                7
+              ],
+              "tx_type": 198,
+              "value": 7
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 160,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[50]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.51",
+          "kind": "choice",
+          "label": "Engine driver (personalized)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                210,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                210,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                210,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 160,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[51]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.52",
+          "kind": "choice",
+          "label": "Steering steering (personalized)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                209,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                209,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 160,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[52]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.53",
+          "kind": "choice",
+          "label": "Turn lights (personalized)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                213,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                213,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                213,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 160,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[53]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.54",
+          "kind": "choice",
+          "label": "Climate air conditioner (personalized)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                211,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                211,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 160,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[54]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.55",
+          "kind": "choice",
+          "label": "Mode reset (personalized)",
+          "options": [
+            {
+              "label": "Mode reset",
+              "payload": [
+                212,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[55]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.56",
+          "kind": "choice",
+          "label": "Steering (Off-Road Personalization)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                215,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                215,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[56]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.57",
+          "kind": "choice",
+          "label": "Air conditioner (off-road personalization)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                217,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                217,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[57]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.58",
+          "kind": "choice",
+          "label": "Turn lights (off-road personalization)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                216,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Sports",
+              "payload": [
+                216,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Economy",
+              "payload": [
+                216,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "Off-Road",
+              "payload": [
+                216,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[58]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.59",
+          "kind": "choice",
+          "label": "Drive (Off-Road Personalization)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                214,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Off-Road",
+              "payload": [
+                214,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[59]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.60",
+          "kind": "choice",
+          "label": "4WD (Off-Road Personalization)",
+          "options": [
+            {
+              "label": "Standard",
+              "payload": [
+                221,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Off-Road",
+              "payload": [
+                221,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 3,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[60]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.61",
+          "kind": "choice",
+          "label": "Downhill Assist System (Off-Road Personalization)",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                218,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                218,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 7,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[61]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.62",
+          "kind": "choice",
+          "label": "Hill start system (off-road personalization)",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                219,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                219,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 6,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 6,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[62]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.63",
+          "kind": "choice",
+          "label": "Parking Assist (Off-Road Personalization)",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                220,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                220,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 5,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 161,
+          "rx_min_length": true,
+          "rx_start_bit": 5,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[63]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.64",
+          "kind": "choice",
+          "label": "Mode reset (off-road personalization)",
+          "options": [
+            {
+              "label": "Mode reset",
+              "payload": [
+                222,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[64]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.65",
+          "kind": "choice",
+          "label": "Seat heating level",
+          "options": [
+            {
+              "label": "Low",
+              "payload": [
+                169,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "in",
+              "payload": [
+                169,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "High",
+              "payload": [
+                169,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            }
+          ],
+          "rx_end_bit": 4,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 192,
+          "rx_min_length": true,
+          "rx_start_bit": 3,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[65]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.66",
+          "kind": "choice",
+          "label": "Link seat/steering wheel heating",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                168,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                168,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 2,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 192,
+          "rx_min_length": true,
+          "rx_start_bit": 2,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[66]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.67",
+          "kind": "choice",
+          "label": "Automatic windshield heating",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                167,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                167,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 192,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[67]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.68",
+          "kind": "choice",
+          "label": "Automatic auxiliary heating",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                189,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                189,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 192,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[68]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.69",
+          "kind": "choice",
+          "label": "AQS auto cycle",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                176,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                176,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 5,
+          "rx_index": 4,
+          "rx_length": 10,
+          "rx_min_length": true,
+          "rx_start_bit": 5,
+          "rx_type": 33,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[69]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.70",
+          "kind": "choice",
+          "label": "Reverse mode selection",
+          "options": [
+            {
+              "label": "Vertical Mode",
+              "payload": [
+                70,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Side Mode",
+              "payload": [
+                70,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "Top view mode",
+              "payload": [
+                70,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "Narrow Alley Mode",
+              "payload": [
+                70,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 208,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[70]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.71",
+          "kind": "choice",
+          "label": "Brightness adjustment",
+          "options": [
+            {
+              "label": "30",
+              "payload": [
+                71,
+                30
+              ],
+              "tx_type": 198,
+              "value": 30
+            },
+            {
+              "label": "40",
+              "payload": [
+                71,
+                40
+              ],
+              "tx_type": 198,
+              "value": 40
+            },
+            {
+              "label": "50",
+              "payload": [
+                71,
+                50
+              ],
+              "tx_type": 198,
+              "value": 50
+            },
+            {
+              "label": "60",
+              "payload": [
+                71,
+                60
+              ],
+              "tx_type": 198,
+              "value": 60
+            },
+            {
+              "label": "70",
+              "payload": [
+                71,
+                70
+              ],
+              "tx_type": 198,
+              "value": 70
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 208,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[71]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.72",
+          "kind": "choice",
+          "label": "Contrast adjustment",
+          "options": [
+            {
+              "label": "30",
+              "payload": [
+                72,
+                30
+              ],
+              "tx_type": 198,
+              "value": 30
+            },
+            {
+              "label": "40",
+              "payload": [
+                72,
+                40
+              ],
+              "tx_type": 198,
+              "value": 40
+            },
+            {
+              "label": "50",
+              "payload": [
+                72,
+                50
+              ],
+              "tx_type": 198,
+              "value": 50
+            },
+            {
+              "label": "60",
+              "payload": [
+                72,
+                60
+              ],
+              "tx_type": 198,
+              "value": 60
+            },
+            {
+              "label": "70",
+              "payload": [
+                72,
+                70
+              ],
+              "tx_type": 198,
+              "value": 70
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 208,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[72]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.73",
+          "kind": "choice",
+          "label": "Saturation adjustment",
+          "options": [
+            {
+              "label": "30",
+              "payload": [
+                73,
+                30
+              ],
+              "tx_type": 198,
+              "value": 30
+            },
+            {
+              "label": "40",
+              "payload": [
+                73,
+                40
+              ],
+              "tx_type": 198,
+              "value": 40
+            },
+            {
+              "label": "50",
+              "payload": [
+                73,
+                50
+              ],
+              "tx_type": 198,
+              "value": 50
+            },
+            {
+              "label": "60",
+              "payload": [
+                73,
+                60
+              ],
+              "tx_type": 198,
+              "value": 60
+            },
+            {
+              "label": "70",
+              "payload": [
+                73,
+                70
+              ],
+              "tx_type": 198,
+              "value": 70
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 4,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 208,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[73]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.74",
+          "kind": "choice",
+          "label": "Car key activated",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                202,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                202,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 176,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[74]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009001.setting.75",
+          "kind": "choice",
+          "label": "Language",
+          "options": [
+            {
+              "label": "German",
+              "payload": [
+                0,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "English (UK)",
+              "payload": [
+                0,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            },
+            {
+              "label": "English (US)",
+              "payload": [
+                0,
+                2
+              ],
+              "tx_type": 198,
+              "value": 2
+            },
+            {
+              "label": "French",
+              "payload": [
+                0,
+                3
+              ],
+              "tx_type": 198,
+              "value": 3
+            },
+            {
+              "label": "Italian",
+              "payload": [
+                0,
+                4
+              ],
+              "tx_type": 198,
+              "value": 4
+            },
+            {
+              "label": "Spanish",
+              "payload": [
+                0,
+                5
+              ],
+              "tx_type": 198,
+              "value": 5
+            },
+            {
+              "label": "Portuguese",
+              "payload": [
+                0,
+                6
+              ],
+              "tx_type": 198,
+              "value": 6
+            },
+            {
+              "label": "Polish",
+              "payload": [
+                0,
+                7
+              ],
+              "tx_type": 198,
+              "value": 7
+            },
+            {
+              "label": "Czech",
+              "payload": [
+                0,
+                8
+              ],
+              "tx_type": 198,
+              "value": 8
+            },
+            {
+              "label": "Hungarian",
+              "payload": [
+                0,
+                9
+              ],
+              "tx_type": 198,
+              "value": 9
+            },
+            {
+              "label": "Danish",
+              "payload": [
+                0,
+                10
+              ],
+              "tx_type": 198,
+              "value": 10
+            },
+            {
+              "label": "Swedish",
+              "payload": [
+                0,
+                11
+              ],
+              "tx_type": 198,
+              "value": 11
+            },
+            {
+              "label": "Dutch",
+              "payload": [
+                0,
+                13
+              ],
+              "tx_type": 198,
+              "value": 13
+            },
+            {
+              "label": "Russian",
+              "payload": [
+                0,
+                16
+              ],
+              "tx_type": 198,
+              "value": 16
+            },
+            {
+              "label": "Greek",
+              "payload": [
+                0,
+                17
+              ],
+              "tx_type": 198,
+              "value": 17
+            },
+            {
+              "label": "Korean",
+              "payload": [
+                0,
+                18
+              ],
+              "tx_type": 198,
+              "value": 18
+            },
+            {
+              "label": "Turkish",
+              "payload": [
+                0,
+                22
+              ],
+              "tx_type": 198,
+              "value": 22
+            },
+            {
+              "label": "Chinese",
+              "payload": [
+                0,
+                23
+              ],
+              "tx_type": 198,
+              "value": 23
+            },
+            {
+              "label": "Norwegian",
+              "payload": [
+                0,
+                29
+              ],
+              "tx_type": 198,
+              "value": 29
+            },
+            {
+              "label": "Croatia",
+              "payload": [
+                0,
+                30
+              ],
+              "tx_type": 198,
+              "value": 30
+            }
+          ],
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_match_index": 0,
+          "rx_match_value": 0,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[75]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.unit",
+          "kind": "readout",
+          "label": "Tyre pressure unit code (0=bar, 1=psi, 2=kPa)",
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 6,
+          "rx_match_index": 0,
+          "rx_match_value": 144,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 64,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/unit",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.monitor",
+          "kind": "readout",
+          "label": "Tyre monitoring status (raw)",
+          "rx_end_bit": 7,
+          "rx_index": 0,
+          "rx_length": 5,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 102,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/monitor",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.alarm_wheels",
+          "kind": "readout",
+          "label": "Tyre alarm wheel bitmask",
+          "rx_end_bit": 7,
+          "rx_index": 0,
+          "rx_length": 2,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 101,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/alarm_wheels",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.alarm",
+          "kind": "readout",
+          "label": "Tyre alarm code (raw)",
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 2,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 101,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/alarm",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.pressure.1",
+          "kind": "readout",
+          "label": "Front left tyre pressure (raw code)",
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 5,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 102,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.1",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.pressure.2",
+          "kind": "readout",
+          "label": "Front right tyre pressure (raw code)",
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 5,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 102,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.2",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.pressure.3",
+          "kind": "readout",
+          "label": "Rear left tyre pressure (raw code)",
+          "rx_end_bit": 7,
+          "rx_index": 3,
+          "rx_length": 5,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 102,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.3",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009001.tyre.pressure.4",
+          "kind": "readout",
+          "label": "Rear right tyre pressure (raw code)",
+          "rx_end_bit": 7,
+          "rx_index": 4,
+          "rx_length": 5,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 102,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.4",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        }
+      ],
+      "maker_id": "2",
+      "selection_id": "2009001",
+      "unresolved": [
+        "OEM startup/ACC ACK and activity-open refresh requests not emitted",
+        "Dynamic OEM feature-visibility flags are not a vehicle acceptance claim",
+        "Hardcoded climate, trip/oil/maintenance and media-box behavior not lowered in this batch",
+        "RX below-range/clamped sentinels are raw observations, not inferred settings",
+        "Lighting/radar sliders, speed-unit handling and dynamic availability flags remain outside this batch",
+        "MQB tyre pressure scaling depends on separately received unit; raw codes exposed"
+      ],
+      "verified": false
+    },
+    {
+      "apk_sha256": "37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91",
+      "brand_id": "9",
+      "controls": [
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009002.setting.0",
+          "kind": "choice",
+          "label": "Parking radar sound",
+          "options": [
+            {
+              "label": "Close",
+              "payload": [
+                0,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Open",
+              "payload": [
+                0,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 0,
+          "rx_index": 0,
+          "rx_length": 2,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 37,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java",
+          "source_pointer": "setting[0]",
+          "source_sha256": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009002.setting.1",
+          "kind": "choice",
+          "label": "Parking Mode",
+          "options": [
+            {
+              "label": "Mode 1",
+              "payload": [
+                2,
+                0
+              ],
+              "tx_type": 198,
+              "value": 0
+            },
+            {
+              "label": "Mode 2",
+              "payload": [
+                2,
+                1
+              ],
+              "tx_type": 198,
+              "value": 1
+            }
+          ],
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java",
+          "source_pointer": "setting[1]",
+          "source_sha256": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009002.setting.2",
+          "kind": "choice",
+          "label": "Original car audio switch",
+          "options": [
+            {
+              "label": "Media Box",
+              "payload": [
+                1,
+                0
+              ],
+              "tx_type": 163,
+              "value": 0
+            },
+            {
+              "label": "Bluetooth Audio",
+              "payload": [
+                1,
+                1
+              ],
+              "tx_type": 163,
+              "value": 1
+            }
+          ],
+          "rx_end_bit": 1,
+          "rx_index": 0,
+          "rx_length": 2,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 40,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java",
+          "source_pointer": "setting[2]",
+          "source_sha256": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96"
+        },
+        {
+          "group": "Vehicle settings",
+          "id": "xinpu.2009002.tyre.calibrate",
+          "kind": "choice",
+          "label": "Tire pressure calibration",
+          "options": [
+            {
+              "label": "Calibrate",
+              "payload": [
+                1
+              ],
+              "tx_type": 167,
+              "value": 1
+            }
+          ],
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "onClick/reset_tire",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009002.tyre.calibration",
+          "kind": "readout",
+          "label": "Tyre calibration state (0=idle)",
+          "rx_end_bit": 7,
+          "rx_index": 0,
+          "rx_length": 3,
+          "rx_min_length": true,
+          "rx_start_bit": 5,
+          "rx_type": 55,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/calibration",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009002.tyre.communication",
+          "kind": "readout",
+          "label": "Tyre communication failure",
+          "rx_end_bit": 4,
+          "rx_index": 0,
+          "rx_length": 3,
+          "rx_min_length": true,
+          "rx_start_bit": 4,
+          "rx_type": 55,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/communication",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009002.tyre.warning.3",
+          "kind": "readout",
+          "label": "Front left tyre warning",
+          "rx_end_bit": 3,
+          "rx_index": 0,
+          "rx_length": 3,
+          "rx_min_length": true,
+          "rx_start_bit": 3,
+          "rx_type": 55,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.3",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009002.tyre.warning.2",
+          "kind": "readout",
+          "label": "Front right tyre warning",
+          "rx_end_bit": 2,
+          "rx_index": 0,
+          "rx_length": 3,
+          "rx_min_length": true,
+          "rx_start_bit": 2,
+          "rx_type": 55,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.2",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009002.tyre.warning.1",
+          "kind": "readout",
+          "label": "Rear left tyre warning",
+          "rx_end_bit": 1,
+          "rx_index": 0,
+          "rx_length": 3,
+          "rx_min_length": true,
+          "rx_start_bit": 1,
+          "rx_type": 55,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.1",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "group": "Tyre monitoring",
+          "id": "xinpu.2009002.tyre.warning.0",
+          "kind": "readout",
+          "label": "Rear right tyre warning",
+          "rx_end_bit": 0,
+          "rx_index": 0,
+          "rx_length": 3,
+          "rx_min_length": true,
+          "rx_start_bit": 0,
+          "rx_type": 55,
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.0",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        }
+      ],
+      "maker_id": "2",
+      "selection_id": "2009002",
+      "unresolved": [
+        "OEM startup/ACC ACK and activity-open refresh requests not emitted",
+        "Dynamic OEM feature-visibility flags are not a vehicle acceptance claim",
+        "Hardcoded climate, trip/oil/maintenance and media-box behavior not lowered in this batch",
+        "PQ multi-byte RPM/speed/voltage/odometer values already have separate rich decoder; not copied into MQB"
+      ],
+      "verified": false
+    }
+  ],
+  "schema": 1,
+  "sources": {
+    "resources/res/values/arrays.xml": "b1ff7d67b9a5cbff41090c108ec6a870974661b9e52356fdd9fbe65f3d8df9b8",
+    "resources/res/values/strings.xml": "5997fd469e0237b093aa48bf8cfeb8b4bdd47b73f46829e131dc8f926edc57e8",
+    "sources/com/canbus/canconst/Xy.java": "6f5aae49039fabe03b17d9a4b93a7778b89d2b8dcc2d5e27527e6eb5e5395f5c",
+    "sources/com/canbus/utils/ToolClass.java": "62f29ec9e410663fe7f9454b90fe0784117628e9de4af9d88ec5119710f16cd6",
+    "sources/com/kyhero/car/myplugin/MainActivity_P.java": "78daaaa3e8ffd5ed03adcbf46d4f132bef8ab0b4e39615089057112c42b74e73",
+    "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96",
+    "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd",
+    "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46",
+    "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+  },
+  "startup_actions": []
+}

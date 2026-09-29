@@ -1,0 +1,13 @@
+// SPDX-License-Identifier: Apache-2.0
+cc_binary {
+    name: "android.hardware.power-service.bengal",
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: ["service.cpp", "Boost.cpp", "SysfsIo.cpp"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+    // Match power-bengal.xml V6; the platform's floating defaults become V7 in17.
+    shared_libs: ["libbinder_ndk", "android.hardware.power-V6-ndk"],
+    // device.mk copies the RC content; init_rc preserves the mirror's host symlink.
+    vintf_fragments: ["power-bengal.xml"],
+}

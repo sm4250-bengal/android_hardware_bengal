@@ -1,0 +1,55 @@
+// Copyright (C) 2026 The XYAUTO device-3 project
+// SPDX-License-Identifier: Apache-2.0
+//
+// vendor.xyauto.audio -- narrow physical-audio guard service of xyauto-hud.
+//
+// This is deliberately a separate V1 rather than an addition to the frozen
+// IHud V1.  It has no raw GPIO/I2C/DSP-address surface: every operation maps
+// to an existing semantic xyauto_audio_guard ioctl owned by the one daemon.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+aidl_interface {
+    name: "vendor.xyauto.audio",
+    vendor_available: true,
+    srcs: ["vendor/xyauto/audio/*.aidl"],
+    stability: "vintf",
+
+    // FROZEN THROUGH V3. RELEASE_AIDL_USE_UNFROZEN=false removes a new
+    // unfrozen interface from the manifest, so every shipped revision is
+    // generated and frozen before its source/version pins move together.
+    frozen: true,
+
+    backend: {
+        rust: {
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        cpp: {
+            enabled: false,
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+        {
+            version: "2",
+            imports: [],
+        },
+        {
+            version: "3",
+            imports: [],
+        },
+
+    ],
+}

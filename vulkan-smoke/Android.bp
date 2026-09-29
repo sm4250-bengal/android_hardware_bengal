@@ -1,0 +1,14 @@
+cc_binary {
+    name: "bengal_vulkan_offscreen_smoke",
+    vendor: true,
+    compile_multilib: "64",
+    srcs: ["src/main.cpp"],
+    local_include_dirs: ["generated"],
+    shared_libs: ["libvulkan"],
+    cpp_std: "c++17",
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}

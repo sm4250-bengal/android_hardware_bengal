@@ -1,0 +1,38 @@
+// SPDX-License-Identifier: Apache-2.0
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+// Bootstrap only. The already-connected FD carries versioned BACP records;
+// no raw MCU commands, sleep calls, or replacement of the IHud UI listener.
+// Generate current/ and V1 with the actual update-api/freeze-api targets
+// before selecting this interface in an installed manifest.
+aidl_interface {
+    name: "vendor.xyauto.accpower",
+    vendor_available: true,
+    srcs: ["vendor/xyauto/accpower/*.aidl"],
+    stability: "vintf",
+    frozen: true,
+    backend: {
+        rust: {
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        cpp: {
+            enabled: false,
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+    ],
+
+}

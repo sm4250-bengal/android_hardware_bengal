@@ -1,0 +1,109 @@
+// Copyright (C) 2026 The XYAUTO device-3 project
+// SPDX-License-Identifier: Apache-2.0
+//
+// vendor.xyauto.fm — the FM interface of the D18 vendor daemon.
+//
+// Wired into the packaged xyauto-hud daemon and built by Soong on 2026-08-31.
+// The daemon's Android.bp lists `vendor.xyauto.fm-V1-rust` in its rustlibs —
+// that crate is GENERATED from this module, which is why src/main.rs cannot be
+// a binder-enabled cargo target.
+//
+// CORRECTED 2026-08-30 (docs/research/2026-08-30-lineage-mirror-platform.md §5,
+// hud-daemon-skeleton.md §5's ⟲ box, build-window-checklist §"Corrections").
+// This header used to say Soong would parse the file "once platform/interfaces
+// is on a PRODUCT_SOONG_NAMESPACES path". Wrong twice, and nothing is waiting on
+// it: (a) PRODUCT_SOONG_NAMESPACES values are paths INSIDE the Lineage checkout,
+// never ours — mirror-device-tree.sh puts this tree at
+// hardware/xyauto/interfaces/vendor/xyauto/fm/aidl; (b) a namespace has to be
+// DECLARED with a soong_namespace {} module at that directory, and
+// `grep -rn soong_namespace platform/{hardware,interfaces,packages}` finds none.
+// So this interface is in the ROOT namespace, which every product can see, and
+// Soong parses it as soon as the mirrored path exists — which it does today.
+// The first proof is out/.module_paths/Android.bp.list at the first configure.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+aidl_interface {
+    name: "vendor.xyauto.fm",
+    vendor_available: true,
+    srcs: ["vendor/xyauto/fm/*.aidl"],
+
+    // @VintfStability on every type, so the interface may cross the
+    // system/vendor boundary and appear in a VINTF manifest.
+    stability: "vintf",
+
+    // FROZEN AT V1, DELIBERATELY.
+    //
+    // This release config has RELEASE_AIDL_USE_UNFROZEN false (bp4a inherits it
+    // through ap3a). For an interface that HAS a previous frozen version that
+    // means a silent downgrade of an unfrozen V2 to V1 — the mechanism
+    // platform/device/xyauto/bengal3/device.mk documents for the clearkey HAL.
+    //
+    // SHARPENED 2026-08-30 (d18-app-hal-binding.md §6.2, xyauto-hud.xml header):
+    // for an interface with NO frozen version — vendor.xyauto.fm today — it is
+    // not a downgrade at all. system/libvintf/AssembleVintf.cpp:463-501 REMOVES
+    // the manifest entry outright, in its own words so that "service manager
+    // will deny registration": addService() then returns "VINTF declaration
+    // error" and the app's waitForDeclaredService() returns null with no
+    // exception. A HAL that is simply absent from vendor/etc/vintf/manifest.xml
+    // is the tell (build-window-checklist Stage 2.1 greps for exactly that).
+    // So: freeze on purpose, and change `frozen` in the same commit that runs
+    // `m vendor.xyauto.fm-freeze-api`.
+    //
+    // FROZEN AT V1 on 2026-08-31, in the first build window. This line and the
+    // `versions_with_info` block below were written by Soong, not by hand:
+    // `m vendor.xyauto.fm-freeze-api` edits this file itself. Because
+    // platform/interfaces is mirrored into the Lineage tree as per-FILE symlinks,
+    // that edit came straight back here through the symlink — only the NEW
+    // aidl_api/ directory had to be copied back by hand (the mirror is one-way
+    // for files it has never seen).
+    //
+    // The freeze needed TWO targets, not one, and the checklist knew only of the
+    // second: `m vendor.xyauto.fm-update-api` creates aidl_api/…/current/, and
+    // WITHOUT it the interface does not build at all —
+    //   API dump for the current version of AIDL interface vendor.xyauto.fm does
+    //   not exist. Run the command "m vendor.xyauto.fm-update-api" …
+    // Only then does `-freeze-api` create 1/ with its .hash.
+    //
+    // What being unfrozen actually cost, measured the same night rather than
+    // reasoned about (build-window Stage 2.1), verbatim from assemble_vintf:
+    //   INFO: Removing HAL from the manifest because it is declaring V1 of a new
+    //   unfrozen interface which is not allowed in this release configuration:
+    //   vendor.xyauto.fm
+    // The entry was deleted outright, so the daemon would have failed
+    // addService() with a VINTF declaration error and the app's
+    // waitForDeclaredService() would have returned null.
+    frozen: true,
+
+    backend: {
+        // Rust: the daemon. The reason this interface exists.
+        rust: {
+            enabled: true,
+        },
+        // NDK: the HU service app's native side, if it ever needs one, and any
+        // C++ test harness.
+        ndk: {
+            enabled: true,
+        },
+        // Java: the HU service app is the single client (D18 — "Apps talk to
+        // it, never to hardware"), and it is Kotlin/Java.
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        // C++ is off: nothing in this product is a C++ client, and every
+        // enabled backend is another artefact to freeze and version.
+        cpp: {
+            enabled: false,
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+    ],
+
+}

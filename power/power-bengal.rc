@@ -1,0 +1,9 @@
+on post-fs-data
+    mkdir /dev/bengal-power 0700 root root
+    restorecon_recursive /dev/bengal-power
+
+service vendor.bengal-power /vendor/bin/hw/android.hardware.power-service.bengal
+    class hal
+    user root
+    group root
+    onrestart exec -- /vendor/bin/hw/android.hardware.power-service.bengal --restore

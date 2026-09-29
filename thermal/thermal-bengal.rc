@@ -1,0 +1,4 @@
+service vendor.bengal-thermal /vendor/bin/hw/android.hardware.thermal-service.bengal
+    class hal
+    user system
+    group system

@@ -1,0 +1,52 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library_shared {
+    name: "libbengal_vulkan_wsi_smoke",
+    // The inert Soong module stays on the measured raw Vulkan renderer. The
+    // private Ganesh adapter is opt-in only through tools/build.sh until the
+    // lead supplies a separately reviewed static-archive integration.
+    srcs: [
+        "src/frame_loop.cpp",
+        "src/logic.cpp",
+        "src/main.cpp",
+    ],
+    local_include_dirs: [
+        "generated",
+        "src",
+    ],
+    header_libs: [
+        "jni_headers",
+        "vulkan_headers",
+    ],
+    shared_libs: [
+        "libandroid",
+        "liblog",
+        "libvulkan",
+    ],
+    whole_static_libs: ["android_native_app_glue"],
+    stl: "c++_static",
+    cpp_std: "c++17",
+    cflags: [
+        "-DVK_USE_PLATFORM_ANDROID_KHR=1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    compile_multilib: "64",
+    min_sdk_version: "35",
+    sdk_version: "current",
+}
+
+// Inert unless explicitly named as a build target. Nothing adds this app to a
+// product, PRODUCT_PACKAGES, init, policy, or the default graphics path.
+android_app {
+    name: "BengalVulkanWsiSmoke",
+    jni_libs: ["libbengal_vulkan_wsi_smoke"],
+    use_embedded_native_libs: true,
+    compile_multilib: "64",
+    soc_specific: true,
+    min_sdk_version: "35",
+    sdk_version: "current",
+}

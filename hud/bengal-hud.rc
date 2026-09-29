@@ -1,0 +1,75 @@
+# /vendor/etc/init/bengal-hud.rc — the D18 vendor daemon and production owner
+# of the board's TLMM85/34 USB physical-role path.
+#
+# Ships through device.mk's PRODUCT_COPY_FILES rule. It must not use the
+# module's `init_rc:` property: mirror-device-tree.sh exposes this source through
+# a host symlink and init_rc shipped that symlink instead of its contents in the
+# first measured image (hardware/xyauto/hud/Android.bp records the proof).
+#
+# The daemon, device labels, AIDL interfaces, VINTF fragment and D18 client
+# bridge now ship together. Class-hal autostart is safe at the electrical
+# boundary: construction opens no GPIO and changes no output; a Binder/ACC
+# action performs the measured 85-then-34 sequence.
+#
+# Hardware nodes are resolved lazily. The packaged contract remains:
+#   1. /dev/i2c-N exists            -> i2c-dev.ko in the package's modules.load
+#                                      (CONFIG_I2C_CHARDEV is "not set" in the
+#                                      GKI, build config and flashed Image both)
+#   2. the device types are shipped -> vendor_bengal3_{i2c,gpio,mcu}_device
+#                                      (bengal3/sepolicy/vendor/phase4d_types.te)
+#                                      plus this daemon's own domain, which
+#                                      lands with the binary
+#   3. the AIDL interface is frozen -> vendor.xyauto.fm V1
+#
+# user system, not root (D18; bengal3/config.fs records why our vendor daemons
+# need no AID of their own). The groups are the minimum for the three nodes it
+# owns; SELinux is what actually confines it, this is only the DAC half.
+
+# The argument is a measured fallback only. Production requires a unique SE0
+# MMIO match, refuses a name sysfs proves is SE3, and logs any fallback as error.
+# Init does not set XYAUTO_HUD_SYSFS_ROOT, so production resolves under /sys;
+# that environment seam exists for desk fixtures used by the other backends.
+service vendor.bengal-hud /vendor/bin/hw/bengal-hud --mcu-device /dev/ttyHS1
+    class hal
+    user system
+    # D3-0119: ueventd exposes /dev/input/event* as root:input 0660; the
+    # observe-only Goodix reader therefore needs input. Lineage exposes
+    # /dev/uinput as 0660 uhid:uhid, so the lazy bound-key injector needs uhid.
+    group system input uhid
+    # Name is a policy contract, never sufficient authority to open the port.
+    # persist.vendor.bengal.hud.can.enable is absent/false by default.
+    setenv BENGAL_HUD_CAN_DEVICE /dev/ttyHS3
+    # Reader frames go to liblog and stderr. Preserve the stderr copy in the
+    # kernel ring so a logcat retention gap cannot erase the keymap capture.
+    stdio_to_kmsg
+    # A hardware daemon that dies must not take the boot with it, but it must
+    # also not flap: the DSP arm token is global and a restart storm is how two
+    # writers ended up stealing it from each other on device 1
+    # (mem:dsp-arm-token-is-global).
+    oneshot
+    # ^ Keep oneshot until a measured probe proves restart is safe for the DSP,
+    #   MCU and GPIO ownership. Init starts it once as part of class hal.
+
+# The bezel button binding table's home. IHud.aidl makes the daemon the system
+# of record for it ("the app is not the system of record"), and the daemon is
+# the only thing that can see a bezel press at all -- so the table has to be
+# readable the moment the daemon starts, not when an app does.
+#
+# ORDERING, and it is what makes this work: `on post-fs-data` runs before
+# `on boot`, and `class_start hal` -- which starts the service above -- is in
+# `on boot` (system/core/rootdir/init.rc:707 vs :1175/:1284). The directory
+# therefore exists before the process that reads it. /data/vendor itself is
+# created at init.rc:729 with encryption=Require, i.e. DEVICE-encrypted, so this
+# is readable at boot with nobody having unlocked anything.
+#
+# INIT CREATES IT, NOT THE DAEMON. A directory the daemon created would take its
+# label from a type_transition rather than from file_contexts, and getting that
+# wrong is invisible until enforcing. One owner, one label:
+#   bengal3/sepolicy/vendor/file_contexts  -> vendor_bengal_hud_data_file
+#   bengal3/sepolicy/vendor/bengal_hud.te  -> the dir/file rules
+#
+# 0700 system system: the service line above runs `user system`, and nothing
+# else on the unit has any business reading which key an owner put on which
+# bezel button.
+on post-fs-data
+    mkdir /data/vendor/bengal-hud 0700 system system

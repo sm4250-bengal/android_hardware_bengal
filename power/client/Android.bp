@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: Apache-2.0
+// Desk candidate: deliberately absent from PRODUCT_PACKAGES and all images.
+cc_binary {
+    name: "bengal-power-hint-client",
+    installable: false,
+    compile_multilib: "64",
+    srcs: ["client.cpp"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+    stl: "c++_static",
+    shared_libs: ["libbinder_ndk"],
+    static_libs: [
+        // Same frozen V6 contract as the service, independent of platform defaults.
+        "android.hardware.power-V6-ndk",
+        "android.hardware.common.fmq-V1-ndk",
+        "android.hardware.common-V2-ndk",
+    ],
+}

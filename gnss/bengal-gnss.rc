@@ -1,0 +1,12 @@
+on post-fs-data
+    mkdir /data/vendor/gnss 0700 gps gps
+    restorecon_recursive /data/vendor/gnss
+    # A cold boot resets the modem. Service restarts do not erase a previous
+    # starting/running/stopping/failed receipt or assume physical cleanup.
+    setprop vendor.bengal.gnss.state idle
+
+service vendor.gnss-bengal /vendor/bin/hw/android.hardware.gnss-service.bengal --serve
+    class hal
+    user gps
+    group gps
+    interface aidl android.hardware.gnss.IGnss/default

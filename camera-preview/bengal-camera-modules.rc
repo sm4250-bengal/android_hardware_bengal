@@ -1,0 +1,5 @@
+# Existing confined AOSP module-loader domain, never the core preview process.
+on property:vendor.bengal.camera.request=1
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules/bengal-camera qcom-camss
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules/bengal-camera tp2855-bengal diagnostic_all_inputs=1
+    setprop vendor.bengal.camera.ready 1

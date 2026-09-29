@@ -1,0 +1,1090 @@
+{
+  "bundle_sha256": "f1e7f28cdaecccf97e817cf12c7d03304b526fce893621c2a6fcbe4510675bca",
+  "compiler_sha256": "68dafb09e5f372fb0785bfe19612a175c24773ebf2a9df836aecb27be3b65403",
+  "linkage_sha256": "4c8b45ce43ad7af258846f28de06b074a59e57bff3631dfcf6a788b5e033731a",
+  "maker_scope": "2",
+  "profiles": [
+    {
+      "apk_sha256": "e0e7f543ea8a293a62f70611c4115d97a8336e74d19ecd060d2199f2426ebd69",
+      "apk_size": 585433,
+      "asset": "assets/car_set_1001001.json",
+      "asset_sha256": "a13e6b190df4e0ad8e3a4831e5adca8ddf5973f243c93f506becdc94df3b279e",
+      "brand_id": "1",
+      "controls": 2,
+      "display": "Raise / Volkswagen PQ",
+      "id": "raise-vw-pq",
+      "kind": "settings",
+      "maker_id": "1",
+      "plugin": "1/1/P1_301.apk",
+      "retained_baseline": true,
+      "selection_id": "1001001",
+      "verified": false
+    },
+    {
+      "apk_sha256": "9fb1dec410ef4f2f6783fae8e4303c65da7c0370bd29d06245c13e35d11c196e",
+      "apk_size": 304868,
+      "assets": [],
+      "brand_id": "1",
+      "cached_analysis_sha256": "7ac7956789cc4b4737e2aafdf6515c3f266904b773258a9f4aa7175a1ca85311",
+      "controls": 1,
+      "controls_provenance": [
+        {
+          "id": "steering.key_code",
+          "source_asset": "classes.dex",
+          "source_method": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V",
+          "source_pointer": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V",
+          "source_sha256": "617ceff5dd80ca7a35db97240c86d6a0a3983fd7eb4947a854756b9b478c9066"
+        }
+      ],
+      "maker_id": "2",
+      "model_names": [
+        "\u5965\u8feaA3",
+        "\u5967\u8feaA3",
+        "Audi A3"
+      ],
+      "native": {
+        "file": "xinpu-audi-linkage.json",
+        "sha256": "e4b5eca8127501a8e1f253dedf7b0c39b5e3edd377717452ee8d5222bd3b01fd",
+        "sources": {
+          "CanbusBack_P.xinpu_Audi_RP5_TraData": {
+            "sha256": "89ef443e0a00d55d0d342b0dbb96ad71dd60dab3a2fef7ebe761be5cf4f023aa",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusBack_P.xinpu_Audi_RP5_TraData:([B)V"
+          },
+          "CanbusBluetooth_P.phoneCall": {
+            "sha256": "7a62e1fd7c3e19b432c15825cfea594d7b25dc63573e060ed3f811967bc6d1e8",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusBluetooth_P.phoneCall:(Landroid/bluetooth/BluetoothHeadsetClientCall;)V"
+          },
+          "CanbusBluetooth_P.xinPu_Audi_RP5_A3_PhoneState": {
+            "sha256": "8d47fcbee20eb960c455eb152338e3f8d479d2b09c57df3eec7e0af056a3ac03",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusBluetooth_P.xinPu_Audi_RP5_A3_PhoneState:(I)V"
+          },
+          "CanbusConfig_P.getBaudRate": {
+            "sha256": "21c8f10d1d95596458d9067d44fff50ef0af3d3e952d70d16826d2ffa1cce017",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusConfig_P.getBaudRate:()I"
+          },
+          "CanbusConfig_P.loadConfig": {
+            "sha256": "25e446b98b578e8f3b0e267593e612f23a9fb550cecfc16c6eba756567896ba7",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusConfig_P.loadConfig:()V"
+          },
+          "CanbusKey_P.RxKey": {
+            "sha256": "c24a3a9a9b7f8281ec4be8e56c6d46a1018c0cde0e10e1869a7a95984a6730c6",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.RxKey:([B)V"
+          },
+          "CanbusKey_P.keySwap": {
+            "sha256": "031de2a326aeaf1ccaed4872cf794a6eda1fdc1bd64211df6f9cda0d6105c652",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.keySwap:(I)I"
+          },
+          "CanbusKey_P.sendKey": {
+            "sha256": "d182ea49f1baefdafecfda8f229ec63d1b2f07d673fd94ff75715adea663e67d",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.sendKey:(II)V"
+          },
+          "CanbusKey_P.xinPu_Audi_A3_Key": {
+            "sha256": "617ceff5dd80ca7a35db97240c86d6a0a3983fd7eb4947a854756b9b478c9066",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V"
+          },
+          "CanbusKey_P.xinPu_Audi_RP5_A3_Key": {
+            "sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V"
+          },
+          "CanbusPattern_P.RxMode": {
+            "sha256": "dfa9f2fc86813332d0d13a9f1af50ca6516b9e2d4cc1050af5ec6507e7373800",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.RxMode:([Ljava/lang/String;)V"
+          },
+          "CanbusPattern_P.RxSound": {
+            "sha256": "1ae76c16d357ff9a99d1e4ecfb3d5a70c02e50d1bb80b4ba952313b247b4f0a0",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.RxSound:()V"
+          },
+          "CanbusPattern_P.sendCanbusAck": {
+            "sha256": "c1c8693039df1b660b730860db6ee5c3a5a2c46a280d25972b733fc4568521c5",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.sendCanbusAck:()V"
+          },
+          "CanbusPattern_P.xinPu_Audi_RP5_A3_Media_Mode": {
+            "sha256": "b99c1652aee6b33491735ba618998d4feff21fa82a20ee12f9006eaee7c8f18b",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.xinPu_Audi_RP5_A3_Media_Mode:([Ljava/lang/String;)V"
+          },
+          "CanbusSerial.xp_rx_uart_aa55": {
+            "sha256": "59b6934d2680e85064a95612b5c055321e15e959a0a5e9d0bb59270c21dcc2a5",
+            "signature": "com.canbus.data.CanbusSerial.xp_rx_uart_aa55:()V"
+          },
+          "ToolClass.sendBroadcast_38406": {
+            "sha256": "3117fd7a54b4ce3de9520e103e61d4f91855c2ada21be1e37828f3874ff8edf9",
+            "signature": "com.canbus.utils.ToolClass.sendBroadcast_38406:(Landroid/os/ICanbusService;Landroid/content/Context;I[I)V"
+          },
+          "ToolClass.sendDataToSerial": {
+            "sha256": "3cc20eac5e5659b43d00c6989eb1779208a41cc923b5987a5db28751d0c4eb29",
+            "signature": "com.canbus.utils.ToolClass.sendDataToSerial:(Landroid/os/ICanbusService;Landroid/content/Context;[B)V"
+          }
+        }
+      },
+      "plugin": "2/1/P1_301.apk",
+      "profile_id": "oem-vag-2001001",
+      "selection_id": "2001001",
+      "status": "implemented-partial-unverified",
+      "verified": false
+    },
+    {
+      "apk_sha256": "9fb1dec410ef4f2f6783fae8e4303c65da7c0370bd29d06245c13e35d11c196e",
+      "apk_size": 304868,
+      "assets": [
+        {
+          "consumer_mode": "bit-nonzero",
+          "consumer_proven": true,
+          "kind": "door",
+          "path": "assets/car_door_2001002.json",
+          "rx_min_length": true,
+          "selection": "model",
+          "sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d",
+          "size_bytes": 484
+        }
+      ],
+      "brand_id": "1",
+      "cached_analysis_sha256": "7ac7956789cc4b4737e2aafdf6515c3f266904b773258a9f4aa7175a1ca85311",
+      "controls": 8,
+      "controls_provenance": [
+        {
+          "id": "door.0c81fa87dd79fa6e",
+          "source_asset": "assets/car_door_2001002.json",
+          "source_pointer": "/carDoors/0",
+          "source_sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d"
+        },
+        {
+          "id": "door.1c9efa6354b2bca5",
+          "source_asset": "assets/car_door_2001002.json",
+          "source_pointer": "/carDoors/1",
+          "source_sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d"
+        },
+        {
+          "id": "door.ff1f9067c9a94fa2",
+          "source_asset": "assets/car_door_2001002.json",
+          "source_pointer": "/carDoors/2",
+          "source_sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d"
+        },
+        {
+          "id": "door.f2cc849232fdb1b2",
+          "source_asset": "assets/car_door_2001002.json",
+          "source_pointer": "/carDoors/3",
+          "source_sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d"
+        },
+        {
+          "id": "door.6e0cbfcd90f7fc1e",
+          "source_asset": "assets/car_door_2001002.json",
+          "source_pointer": "/carDoors/4",
+          "source_sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d"
+        },
+        {
+          "id": "door.12520c2aa1099fa5",
+          "source_asset": "assets/car_door_2001002.json",
+          "source_pointer": "/carDoors/5",
+          "source_sha256": "208eeaf21ba6205cb4ff8bbe113e59114f4abaca5967bf0f8a9f23a070071d0d"
+        },
+        {
+          "id": "steering.key_code",
+          "source_asset": "classes.dex",
+          "source_method": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_pointer": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193"
+        },
+        {
+          "id": "steering.key_state",
+          "source_asset": "classes.dex",
+          "source_method": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_pointer": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193"
+        }
+      ],
+      "maker_id": "2",
+      "model_names": [
+        "\u8001\u6b3e\u5965\u8feaA3 A4 TT",
+        "\u8001\u6b3e\u5967\u8feaA3 A4 TT",
+        "Old Audi A3 A4 TT"
+      ],
+      "native": {
+        "file": "xinpu-audi-linkage.json",
+        "sha256": "e4b5eca8127501a8e1f253dedf7b0c39b5e3edd377717452ee8d5222bd3b01fd",
+        "sources": {
+          "CanbusBack_P.xinpu_Audi_RP5_TraData": {
+            "sha256": "89ef443e0a00d55d0d342b0dbb96ad71dd60dab3a2fef7ebe761be5cf4f023aa",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusBack_P.xinpu_Audi_RP5_TraData:([B)V"
+          },
+          "CanbusBluetooth_P.phoneCall": {
+            "sha256": "7a62e1fd7c3e19b432c15825cfea594d7b25dc63573e060ed3f811967bc6d1e8",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusBluetooth_P.phoneCall:(Landroid/bluetooth/BluetoothHeadsetClientCall;)V"
+          },
+          "CanbusBluetooth_P.xinPu_Audi_RP5_A3_PhoneState": {
+            "sha256": "8d47fcbee20eb960c455eb152338e3f8d479d2b09c57df3eec7e0af056a3ac03",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusBluetooth_P.xinPu_Audi_RP5_A3_PhoneState:(I)V"
+          },
+          "CanbusConfig_P.getBaudRate": {
+            "sha256": "21c8f10d1d95596458d9067d44fff50ef0af3d3e952d70d16826d2ffa1cce017",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusConfig_P.getBaudRate:()I"
+          },
+          "CanbusConfig_P.loadConfig": {
+            "sha256": "25e446b98b578e8f3b0e267593e612f23a9fb550cecfc16c6eba756567896ba7",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusConfig_P.loadConfig:()V"
+          },
+          "CanbusKey_P.RxKey": {
+            "sha256": "c24a3a9a9b7f8281ec4be8e56c6d46a1018c0cde0e10e1869a7a95984a6730c6",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.RxKey:([B)V"
+          },
+          "CanbusKey_P.keySwap": {
+            "sha256": "031de2a326aeaf1ccaed4872cf794a6eda1fdc1bd64211df6f9cda0d6105c652",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.keySwap:(I)I"
+          },
+          "CanbusKey_P.sendKey": {
+            "sha256": "d182ea49f1baefdafecfda8f229ec63d1b2f07d673fd94ff75715adea663e67d",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.sendKey:(II)V"
+          },
+          "CanbusKey_P.xinPu_Audi_A3_Key": {
+            "sha256": "617ceff5dd80ca7a35db97240c86d6a0a3983fd7eb4947a854756b9b478c9066",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V"
+          },
+          "CanbusKey_P.xinPu_Audi_RP5_A3_Key": {
+            "sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V"
+          },
+          "CanbusPattern_P.RxMode": {
+            "sha256": "dfa9f2fc86813332d0d13a9f1af50ca6516b9e2d4cc1050af5ec6507e7373800",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.RxMode:([Ljava/lang/String;)V"
+          },
+          "CanbusPattern_P.RxSound": {
+            "sha256": "1ae76c16d357ff9a99d1e4ecfb3d5a70c02e50d1bb80b4ba952313b247b4f0a0",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.RxSound:()V"
+          },
+          "CanbusPattern_P.sendCanbusAck": {
+            "sha256": "c1c8693039df1b660b730860db6ee5c3a5a2c46a280d25972b733fc4568521c5",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.sendCanbusAck:()V"
+          },
+          "CanbusPattern_P.xinPu_Audi_RP5_A3_Media_Mode": {
+            "sha256": "b99c1652aee6b33491735ba618998d4feff21fa82a20ee12f9006eaee7c8f18b",
+            "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.xinPu_Audi_RP5_A3_Media_Mode:([Ljava/lang/String;)V"
+          },
+          "CanbusSerial.xp_rx_uart_aa55": {
+            "sha256": "59b6934d2680e85064a95612b5c055321e15e959a0a5e9d0bb59270c21dcc2a5",
+            "signature": "com.canbus.data.CanbusSerial.xp_rx_uart_aa55:()V"
+          },
+          "ToolClass.sendBroadcast_38406": {
+            "sha256": "3117fd7a54b4ce3de9520e103e61d4f91855c2ada21be1e37828f3874ff8edf9",
+            "signature": "com.canbus.utils.ToolClass.sendBroadcast_38406:(Landroid/os/ICanbusService;Landroid/content/Context;I[I)V"
+          },
+          "ToolClass.sendDataToSerial": {
+            "sha256": "3cc20eac5e5659b43d00c6989eb1779208a41cc923b5987a5db28751d0c4eb29",
+            "signature": "com.canbus.utils.ToolClass.sendDataToSerial:(Landroid/os/ICanbusService;Landroid/content/Context;[B)V"
+          }
+        }
+      },
+      "plugin": "2/1/P1_301.apk",
+      "profile_id": "oem-vag-2001002",
+      "selection_id": "2001002",
+      "status": "implemented-partial-unverified",
+      "verified": false
+    },
+    {
+      "apk_sha256": "37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91",
+      "apk_size": 440331,
+      "assets": [
+        {
+          "consumer_mode": "bit-nonzero",
+          "consumer_proven": true,
+          "kind": "door",
+          "path": "assets/car_door_2009001.json",
+          "rx_min_length": true,
+          "selection": "model",
+          "sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732",
+          "size_bytes": 623
+        }
+      ],
+      "brand_id": "9",
+      "cached_analysis_sha256": "6440ca5dfd62b6957c0fed6814528bfe0bcaed5188edca4e305a6d7f94287a4d",
+      "controls": 90,
+      "controls_provenance": [
+        {
+          "id": "door.4634addfafb7359b",
+          "source_asset": "assets/car_door_2009001.json",
+          "source_pointer": "/carDoors/0",
+          "source_sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732"
+        },
+        {
+          "id": "door.3055964f1c2486c2",
+          "source_asset": "assets/car_door_2009001.json",
+          "source_pointer": "/carDoors/1",
+          "source_sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732"
+        },
+        {
+          "id": "door.bdbf92915fc70538",
+          "source_asset": "assets/car_door_2009001.json",
+          "source_pointer": "/carDoors/2",
+          "source_sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732"
+        },
+        {
+          "id": "door.4fd14027b9fb1130",
+          "source_asset": "assets/car_door_2009001.json",
+          "source_pointer": "/carDoors/3",
+          "source_sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732"
+        },
+        {
+          "id": "door.1416a1cf099b3cc8",
+          "source_asset": "assets/car_door_2009001.json",
+          "source_pointer": "/carDoors/4",
+          "source_sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732"
+        },
+        {
+          "id": "door.d50bb1103a6dc511",
+          "source_asset": "assets/car_door_2009001.json",
+          "source_pointer": "/carDoors/5",
+          "source_sha256": "290fbf0ad44ac3276ae8b799b6315ef60f3893df4100d1cc85c90252020a7732"
+        },
+        {
+          "id": "xinpu.2009001.setting.0",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[0]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.1",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[1]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.2",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[2]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.3",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[3]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.4",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[4]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.5",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[5]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.6",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[6]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.7",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[7]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.8",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[8]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.9",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[9]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.10",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[10]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.11",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[11]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.12",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[12]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.13",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[13]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.14",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[14]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.15",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[15]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.16",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[16]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.17",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[17]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.18",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[18]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.19",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[19]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.20",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[20]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.21",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[21]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.22",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[22]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.23",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[23]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.24",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[24]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.25",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[25]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.26",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[26]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.27",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[27]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.28",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[28]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.29",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[29]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.30",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[30]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.31",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[31]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.32",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[32]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.33",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[33]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.34",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[34]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.35",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[35]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.36",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[36]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.37",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[37]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.38",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[38]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.39",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[39]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.40",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[40]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.41",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[41]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.42",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[42]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.43",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[43]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.44",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[44]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.45",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[45]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.46",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[46]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.47",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[47]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.48",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[48]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.49",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[49]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.50",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[50]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.51",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[51]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.52",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[52]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.53",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[53]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.54",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[54]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.55",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[55]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.56",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[56]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.57",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[57]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.58",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[58]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.59",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[59]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.60",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[60]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.61",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[61]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.62",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[62]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.63",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[63]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.64",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[64]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.65",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[65]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.66",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[66]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.67",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[67]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.68",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[68]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.69",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[69]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.70",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[70]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.71",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[71]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.72",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[72]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.73",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[73]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.74",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[74]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.setting.75",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java",
+          "source_pointer": "setting[75]",
+          "source_sha256": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd"
+        },
+        {
+          "id": "xinpu.2009001.tyre.unit",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/unit",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.monitor",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/monitor",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.alarm_wheels",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/alarm_wheels",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.alarm",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/alarm",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.pressure.1",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.1",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.pressure.2",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.2",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.pressure.3",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.3",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        },
+        {
+          "id": "xinpu.2009001.tyre.pressure.4",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java",
+          "source_pointer": "initDataState/pressure.4",
+          "source_sha256": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46"
+        }
+      ],
+      "maker_id": "2",
+      "model_names": [
+        "2013\u6b3e \u9ad8\u5c14\u592b7/2015\u6b3e \u51cc\u5ea6/2015\u6b3e Polo/2015\u6b3e \u5e15\u8428\u7279B8/2016\u6b3e \u9ad8\u5c14\u592b.\u5609\u65c5/2016\u6b3e \u9014\u5b89L/2017\u6b3e \u8fc8\u817e/2017\u6b3e \u9014\u89c2/2017\u6b3e \u9014\u6602/2014\u6b3e \u660e\u9510/2015\u6b3e Fabia/2016\u6b3e \u901f\u6d3e/2017\u6b3e \u67ef\u8fea\u4e9a\u514b/2013\u6b3e Leon FR/2017\u6b3e Ateca",
+        "2013\u6b3e \u9ad8\u723e\u592b7/2015\u6b3e \u51cc\u5ea6/2015\u6b3e Polo/2015\u6b3e \u5e15\u85a9\u7279B8/2016\u6b3e \u9ad8\u723e\u592b.\u5609\u65c5/2016\u6b3e \u9014\u5b89L/2017\u6b3e \u9081\u9a30/2017\u6b3e \u9014\u89c0/2017\u6b3e \u9014\u6602/2014\u6b3e \u660e\u92b3/2015\u6b3e Fabia/2016\u6b3e \u901f\u6d3e/2017\u6b3e \u79d1\u8fea\u4e9e\u514b/2013\u6b3e Leon FR/2017\u6b3e Ateca",
+        "2013 Golf 7/2015 Lamando/2015 Polo/2015 Passat B8/2016 Sportsvan/2016 Touran L/2017 Magoten/2017 Tiguan/2017 Terament/2014 Octavia/2015 Fabia/2016 Superb/2017 kodiaq/2013 Leon FR/2017 Ateca"
+      ],
+      "native": {
+        "file": "xinpu-native.json",
+        "sha256": "986e6c76159bb791e660c62d026277a06438945477341b99e43f7c23d98d8932",
+        "sources": {
+          "resources/res/values/arrays.xml": "b1ff7d67b9a5cbff41090c108ec6a870974661b9e52356fdd9fbe65f3d8df9b8",
+          "resources/res/values/strings.xml": "5997fd469e0237b093aa48bf8cfeb8b4bdd47b73f46829e131dc8f926edc57e8",
+          "sources/com/canbus/canconst/Xy.java": "6f5aae49039fabe03b17d9a4b93a7778b89d2b8dcc2d5e27527e6eb5e5395f5c",
+          "sources/com/canbus/utils/ToolClass.java": "62f29ec9e410663fe7f9454b90fe0784117628e9de4af9d88ec5119710f16cd6",
+          "sources/com/kyhero/car/myplugin/MainActivity_P.java": "78daaaa3e8ffd5ed03adcbf46d4f132bef8ab0b4e39615089057112c42b74e73",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        }
+      },
+      "plugin": "2/9/P1_301.apk",
+      "profile_id": "oem-vag-2009001",
+      "selection_id": "2009001",
+      "status": "implemented-partial-unverified",
+      "verified": false
+    },
+    {
+      "apk_sha256": "37d05db2ce7f2c0a8045fa1f29acca42fe045db94f00e9b054893ed28deb5e91",
+      "apk_size": 440331,
+      "assets": [
+        {
+          "consumer_mode": "absolute",
+          "consumer_proven": true,
+          "kind": "amp",
+          "path": "assets/car_amp_2009002.json",
+          "rx_min_length": true,
+          "selection": "model",
+          "sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52",
+          "size_bytes": 2043
+        },
+        {
+          "consumer_mode": "raw-proximity-code",
+          "consumer_proven": true,
+          "kind": "radar",
+          "path": "assets/car_radar_2009002.json",
+          "rx_min_length": true,
+          "selection": "model",
+          "sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e",
+          "size_bytes": 816
+        }
+      ],
+      "brand_id": "9",
+      "cached_analysis_sha256": "6440ca5dfd62b6957c0fed6814528bfe0bcaed5188edca4e305a6d7f94287a4d",
+      "controls": 25,
+      "controls_provenance": [
+        {
+          "id": "amp.volume",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/0",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "amp.balance",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/1",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "amp.fader",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/2",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "amp.bass",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/3",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "amp.mid",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/4",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "amp.treble",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/5",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "amp.speed",
+          "source_asset": "assets/car_amp_2009002.json",
+          "source_pointer": "/Controls/6",
+          "source_sha256": "a66c6fbd9302e8ef5d7ed4315221dbbdfb76ca6ef1b2be1b275abe6bf867cb52"
+        },
+        {
+          "id": "radar.ad84a2a9a0c3fc71",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/0",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.66fc5e2a548aa688",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/1",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.f4176a19777390a3",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/2",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.a6a0d415c9a573ce",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/3",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.f6775f4f7476ebf6",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/4",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.e9b7b91404b86fe4",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/5",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.8c303fc8f2638236",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/6",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "radar.9c1f8849a13bfc23",
+          "source_asset": "assets/car_radar_2009002.json",
+          "source_pointer": "/carRadars/7",
+          "source_sha256": "ded86657a0a655987df22b10fd7b21e44ffc79585b36b6a76fc37356264f612e"
+        },
+        {
+          "id": "xinpu.2009002.setting.0",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java",
+          "source_pointer": "setting[0]",
+          "source_sha256": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96"
+        },
+        {
+          "id": "xinpu.2009002.setting.1",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java",
+          "source_pointer": "setting[1]",
+          "source_sha256": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96"
+        },
+        {
+          "id": "xinpu.2009002.setting.2",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java",
+          "source_pointer": "setting[2]",
+          "source_sha256": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96"
+        },
+        {
+          "id": "xinpu.2009002.tyre.calibrate",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "onClick/reset_tire",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "id": "xinpu.2009002.tyre.calibration",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/calibration",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "id": "xinpu.2009002.tyre.communication",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/communication",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "id": "xinpu.2009002.tyre.warning.3",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.3",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "id": "xinpu.2009002.tyre.warning.2",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.2",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "id": "xinpu.2009002.tyre.warning.1",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.1",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        },
+        {
+          "id": "xinpu.2009002.tyre.warning.0",
+          "source_asset": "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java",
+          "source_pointer": "initDataState/warning.0",
+          "source_sha256": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        }
+      ],
+      "maker_id": "2",
+      "model_names": [
+        "\u5927\u4f17\u7cfb\u5217\u5168\u517c\u5bb9(\u5bb9\u9519\u578b,\u65e7\u6b3e\u9ad8\u901f\u578b)",
+        "\u5927\u773e\u7cfb\u5217\u5168\u517c\u5bb9(\u5bb9\u932f\u578b,\u820a\u6b3e\u9ad8\u901f\u578b)",
+        "Volkswagen ALL(Fault-tolerant, Old high-speed)"
+      ],
+      "native": {
+        "file": "xinpu-native.json",
+        "sha256": "986e6c76159bb791e660c62d026277a06438945477341b99e43f7c23d98d8932",
+        "sources": {
+          "resources/res/values/arrays.xml": "b1ff7d67b9a5cbff41090c108ec6a870974661b9e52356fdd9fbe65f3d8df9b8",
+          "resources/res/values/strings.xml": "5997fd469e0237b093aa48bf8cfeb8b4bdd47b73f46829e131dc8f926edc57e8",
+          "sources/com/canbus/canconst/Xy.java": "6f5aae49039fabe03b17d9a4b93a7778b89d2b8dcc2d5e27527e6eb5e5395f5c",
+          "sources/com/canbus/utils/ToolClass.java": "62f29ec9e410663fe7f9454b90fe0784117628e9de4af9d88ec5119710f16cd6",
+          "sources/com/kyhero/car/myplugin/MainActivity_P.java": "78daaaa3e8ffd5ed03adcbf46d4f132bef8ab0b4e39615089057112c42b74e73",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_CarSet.java": "984d5bf2e9b14f3e27af7e71ac15950b4c5eca14b05e4b47a41d9378d312ed96",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_CarSet.java": "9bb2c49ac6202f7356549b2eef31ee0484da0de77e48011af038d846fc292efd",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Mqb_Tire.java": "b534fff0b788b9e583b7b18a2a6d2b8daef158d57e639442e155ffa7512eea46",
+          "sources/com/kyhero/car/myplugin/activity/XinPu_Dasauto_Tire.java": "8b65192dfbf9532b9754eb7b53a3c0e465f2c0fcb5bbfdcd633f0e1b0257e3be"
+        }
+      },
+      "plugin": "2/9/P1_301.apk",
+      "profile_id": "xinpu-vw-pq",
+      "selection_id": "2009002",
+      "status": "implemented-partial-unverified",
+      "verified": false
+    }
+  ],
+  "resource_compiler_sha256": "176fbb027112d6039c5f2a2176165dcd4b74f8e085dc8efaee35aed3f7eee10e",
+  "schema": 1,
+  "vag_compiler_sha256": "dc787c015a923c463487648f24580c5d7900dd18af41635fcf6235989964b451",
+  "verified": false,
+  "xinpu_native": [
+    {
+      "file": "xinpu-native.json",
+      "sha256": "986e6c76159bb791e660c62d026277a06438945477341b99e43f7c23d98d8932"
+    },
+    {
+      "file": "xinpu-audi-linkage.json",
+      "sha256": "e4b5eca8127501a8e1f253dedf7b0c39b5e3edd377717452ee8d5222bd3b01fd"
+    }
+  ]
+}

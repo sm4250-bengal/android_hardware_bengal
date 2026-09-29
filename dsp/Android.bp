@@ -1,0 +1,29 @@
+// Copyright (C) 2026 The XYAUTO device-3 project
+// SPDX-License-Identifier: Apache-2.0
+//
+// Library only: D18 has one process, bengal-hud. This module contains the
+// Binder-independent ADAU1701 model and readback policy; bengal-hud supplies
+// the resolved Linux transport and IDsp registration adapter beside
+// IAudioGuard. The adapter is deliberately not called until policy lands.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+rust_library {
+    name: "libxyauto_dsp",
+    crate_name: "xyauto_dsp",
+    srcs: ["src/lib.rs"],
+    edition: "2021",
+    vendor: true,
+}
+
+rust_test_host {
+    name: "libxyauto_dsp_test",
+    crate_name: "xyauto_dsp",
+    srcs: ["src/lib.rs"],
+    edition: "2021",
+    test_options: {
+        unit_test: true,
+    },
+}

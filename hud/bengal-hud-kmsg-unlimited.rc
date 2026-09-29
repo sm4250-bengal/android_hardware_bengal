@@ -1,0 +1,50 @@
+# /system_ext/etc/init/bengal-hud-kmsg-unlimited.rc — CAPTURE BUILDS ONLY.
+#
+# This file exists ONLY when BENGAL_HUD_KMSG_UNLIMITED=1 is passed to the build
+# (device/xyauto/bengal3/device.mk). With the knob at its default 0 the
+# PRODUCT_COPY_FILES line is not evaluated, nothing is installed, and every
+# built file is byte-identical to a build without this branch — AGENTS 2.4.
+# It is a separate file rather than a conditional line inside bengal-hud.rc for
+# exactly that reason: an rc that is copied verbatim cannot be made conditional
+# without generating it, and a generated rc could not be proven identical.
+#
+# WHAT IT DOES, AND WHY THE DEFAULT IS OFF
+#
+# `bengal-hud.rc` sets `stdio_to_kmsg`, so the daemon's stderr is /dev/kmsg.
+# devkmsg_write() rate-limits userspace writes to DEFAULT_RATELIMIT_BURST = 10
+# records per DEFAULT_RATELIMIT_INTERVAL = 5 s, PER OPEN FD
+# (kernel/printk/printk.c:763,945-946; include/linux/ratelimit_types.h:9-10),
+# and devkmsg_open() sets RATELIMIT_MSG_ON_RELEASE, so the
+# "<comm>: N output lines suppressed due to ratelimiting" notice is emitted by
+# ratelimit_state_exit() only when the fd CLOSES — never, for a service that
+# runs for the life of the boot. The drops are therefore completely silent.
+# Measured on D3-0109: exactly ten bengal-hud records reached the ring and the
+# stream was cut mid-line, destroying the mcu-rx line for the only MCU frame of
+# the entire boot.
+#
+# `printk.devkmsg=on` removes the limit for every /dev/kmsg writer in the
+# system. That is right for a keymap-capture build and wrong for a shipping one:
+# it lets any userspace writer flood the kernel ring, which is the ring the
+# boot-log evidence lives in. Hence a knob, default 0.
+#
+# NOT a kernel cmdline token: mem:boot-cmdline-511-char-limit, and /proc/cmdline
+# on D3-0109 is already 1394 characters after ABL's own appends. The sysctl is
+# the reachable knob, and it is read on every write, so setting it any time
+# before the interesting logs is enough.
+#
+# `on early-init` matches init.bengal3.rc's existing convention for this kind of
+# one-shot kernel-parameter write, and /proc is mounted by first-stage init long
+# before second-stage actions run. bengal-hud starts in `class hal` — around
+# t=48 s on D3-0109 — so this lands with a wide margin.
+#
+# SELINUX: the system_ext policy labels this node proc_bengal_printk_devkmsg
+# and grants init w_file_perms on userdebug/eng (bengal_capture.te). The file
+# lives in system_ext so the action runs as init, not vendor_init. Its copy
+# remains capture-only and the build knob still defaults to 0.
+#
+# printk's sysctl requires the keyword plus one terminator byte. Android init
+# write does not append a newline. Keep the escape UNQUOTED: tokenizer.cpp
+# decodes \n in ordinary text but copies it literally inside double quotes.
+
+on early-init
+    write /proc/sys/kernel/printk_devkmsg on\n

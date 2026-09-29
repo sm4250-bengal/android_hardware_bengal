@@ -1,0 +1,38 @@
+#!/system/bin/sh
+# Measured D3-0149 camera backend; no OEM HAL, MCU commands or GKI changes.
+set -eu
+test "$(getprop ro.product.device)" = bengal3
+test "$(getprop ro.debuggable)" = 1
+test "$(getenforce)" = Permissive
+test "$(getprop persist.sys.bengal.camera_service)" = true
+test "$(getprop persist.sys.bengal.acc_power_policy)" = true
+test "$(getprop sys.boot_completed)" = 1
+exec > /data/misc/bengal-camera/bridge.log 2>&1
+camera_uid=$(pm list packages -U --user 0 com.meinte.xyautomcutoolbox | sed -n 's/^package:com.meinte.xyautomcutoolbox uid:\([0-9][0-9]*\)$/\1/p')
+power_uid=$(pm list packages -U --user 0 com.bengal.power | sed -n 's/^package:com.bengal.power uid:\([0-9][0-9]*\)$/\1/p')
+test -n "$camera_uid"
+test -n "$power_uid"
+modules=/vendor/lib/modules/bengal-camera
+pin() { actual=$(sha256sum "$1"); test "${actual%% *}" = "$2"; }
+pin "$modules/qcom-camss.ko" 79bfe8e0ba096287f89908e949efc611043f3c4e5f7b982c42ab1918f8b4d97b
+pin "$modules/tp2855-bengal.ko" 5ae027718e8d754f7c8d34005805257bbca78b6556877f5da0cd7815cebf5b48
+test -d /sys/module/i2c_qcom_cci
+test -d /sys/bus/platform/devices/5c11000.camss
+test "$(cat /sys/bus/i2c/devices/4-0044/name)" = tp2855-camera
+if test ! -d /sys/module/qcom_camss; then insmod "$modules/qcom-camss.ko"; fi
+if test ! -d /sys/module/tp2855_bengal; then
+    insmod "$modules/tp2855-bengal.ko" diagnostic_all_inputs=1
+fi
+test "$(cat /sys/module/tp2855_bengal/parameters/diagnostic_all_inputs)" = Y
+attempt=0
+while test ! -c /dev/v4l-subdev12; do
+    attempt=$((attempt + 1)); test "$attempt" -le 30; sleep 0.1
+done
+set -- --uid "$camera_uid" --policy-uid "$power_uid"
+# Separate from persistence: don't turn an unmeasured GPIO into a default.
+case "$(getprop persist.sys.bengal.camera_reverse_line)" in
+    42) set -- "$@" --reverse-line 42 ;;
+    ''|-1) ;;
+    *) echo 'Unsupported reverse GPIO; refusing'; exit 1 ;;
+esac
+exec /system_ext/bin/bengal-camera-preview "$@"

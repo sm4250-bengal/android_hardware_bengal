@@ -1,0 +1,8 @@
+// Native preview, not an Android Camera2 HAL. Init is product-selected separately.
+cc_binary {
+    name: "bengal-camera-preview",
+    // Core-side companion to BengalPower: no forbidden core→vendor socket.
+    system_ext_specific: true,
+    srcs: ["main.c", "policy.c"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}

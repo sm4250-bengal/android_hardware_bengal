@@ -1,0 +1,38 @@
+# d3-0043-capture
+frame ok  5a a5 08 33 00 22 00 7d fe 09 27
+frame ok  5a a5 0a 21 01 25 00 08 01 01 20 00 8f
+frame ok  5a a5 03 12 04 ea
+frame ok  5a a5 03 12 04 ea
+frame ok  5a a5 03 12 01 ed
+frame ok  5a a5 03 12 04 ea
+frame ok  5a a5 03 12 07 e7
+frame ok  5a a5 03 12 01 ed
+frame ok  5a a5 03 12 07 e7
+frame ok  5a a5 03 12 01 ed
+frame ok  5a a5 03 05 11 ea
+stats valid=11 bad=0 discarded=0 pending=0
+# corrupt-checksum
+frame ok  5a a5 08 33 00 22 00 7d fe 09 27
+frame ok  5a a5 0a 21 01 25 00 08 01 01 20 00 8f
+frame bad 5a a5 03 12 04 eb
+frame ok  5a a5 03 12 04 ea
+frame ok  5a a5 03 12 01 ed
+frame ok  5a a5 03 12 04 ea
+frame ok  5a a5 03 12 07 e7
+frame ok  5a a5 03 12 01 ed
+frame ok  5a a5 03 12 07 e7
+frame ok  5a a5 03 12 01 ed
+frame ok  5a a5 03 05 11 ea
+stats valid=10 bad=1 discarded=0 pending=0
+# garbage-then-frame
+discard 6 BeforeHeader
+frame ok  5a a5 03 12 04 ea
+stats valid=1 bad=0 discarded=6 pending=0
+# impossible-length
+discard 1 ImpossibleLength(0)
+discard 2 BeforeHeader
+frame ok  5a a5 03 12 04 ea
+stats valid=1 bad=0 discarded=3 pending=0
+# lone-5a-tail
+frame ok  5a a5 03 12 04 ea
+stats valid=1 bad=0 discarded=0 pending=1

@@ -1,0 +1,25 @@
+# Confined native companion; vendor init loads the pinned camera module pair.
+# Init ownership is essential: adbd's cgroup is killed when ACC disables USB.
+service bengal-camera-preview /system_ext/bin/bengal-camera-preview
+    class late_start
+    user root
+    # packages.list is system:package_info 0640. Read through its intended
+    # group, not CAP_DAC_OVERRIDE/DAC_READ_SEARCH in the confined domain.
+    # gpiochip is system:system 0660: reverse-input startup also needs system.
+    # Without it the helper exits ENODEV and ACC cannot obtain an idle receipt.
+    group root package_info system
+    disabled
+    restart_period 5
+
+# A vendor action must not read persist.sys.*. Core init owns the preference
+# and publishes only the typed camera request to the vendor module loader.
+on property:sys.boot_completed=1 && property:persist.sys.bengal.camera_service=true
+    setprop vendor.bengal.camera.request 1
+
+on property:vendor.bengal.camera.ready=1 && property:persist.sys.bengal.camera_service=true
+    mkdir /data/misc/bengal-camera 0700 root root
+    start bengal-camera-preview
+
+on property:persist.sys.bengal.camera_service=false
+    setprop vendor.bengal.camera.request 0
+    stop bengal-camera-preview

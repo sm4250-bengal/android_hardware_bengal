@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: Apache-2.0
+// Manual debug diagnostic only. No PRODUCT_PACKAGES or init_rc activation here.
+cc_binary {
+    name: "xyauto-bt-first-trace",
+    vendor: true,
+    srcs: ["src/main.cpp", "src/owner.cpp", "src/posix.cpp"],
+    local_include_dirs: ["include"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}

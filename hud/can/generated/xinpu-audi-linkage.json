@@ -1,0 +1,493 @@
+{
+  "apk_sha256": "9fb1dec410ef4f2f6783fae8e4303c65da7c0370bd29d06245c13e35d11c196e",
+  "event_encoders": [
+    {
+      "event": "head-unit-volume-report",
+      "integration": "automatic event hook absent; not an amplifier setting",
+      "payload_expression": [
+        "volume + (muted ? 128 : 0)"
+      ],
+      "selection_id": "2001002",
+      "tx_type": 196
+    },
+    {
+      "event": "phone-state-report",
+      "integration": "Bluetooth call-state hook absent",
+      "payload_expression": [
+        5,
+        64,
+        "mapped_state",
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "selection_id": "2001002",
+      "state_map": {
+        "0": 2,
+        "2": 3,
+        "3": 3,
+        "4": 1,
+        "7": 4,
+        "default": 4
+      },
+      "tx_type": 192
+    },
+    {
+      "event": "radio-display",
+      "integration": "media source event hook absent",
+      "payload_expression": [
+        1,
+        1,
+        "radio_type in {0,3} ? 0 : 16",
+        "frequency_low",
+        "frequency_high",
+        0,
+        0,
+        0
+      ],
+      "selection_id": "2001002",
+      "tx_type": 192
+    },
+    {
+      "event": "music-display",
+      "integration": "literal OEM shift4 preserved; media source hook absent",
+      "payload_expression": [
+        8,
+        19,
+        "track&255",
+        "(track>>4)&255",
+        0,
+        0,
+        0,
+        0
+      ],
+      "selection_id": "2001002",
+      "tx_type": 192
+    }
+  ],
+  "framing_38406": {
+    "automatic_ack": false,
+    "checksum": "((sum(packed byte and payload)&255)-1) == unsigned received checksum",
+    "checksum_zero_sum": "reject (expected -1); do not silently add final mask",
+    "length_mask": 15,
+    "max_payload": 15,
+    "native_rx_name": "xinpu-aa55-packed-rx",
+    "payload_offset": 3,
+    "rx_header": [
+      170,
+      85
+    ],
+    "tx_header": [
+      85,
+      170
+    ],
+    "tx_packed_expression": "(payload_length&31)&(data_type&224)",
+    "tx_packed_result": 0,
+    "tx_verdict": "blocked: no speculative OR correction",
+    "type_mask": 224,
+    "type_shift": 5
+  },
+  "host_classloader": {
+    "proofs": [
+      {
+        "instruction_sha256": "61245480f072b2159c577a686d70edf1fa061d73d4abd0532cf03cd64efe4437",
+        "instructions": [
+          "0000: const-string v3, \"dex\" // string@02dd",
+          "0002: invoke-virtual {v5, v6, v3}, Lcom/didi/virtualapk/internal/LoadedPlugin;.getDir:(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File; // method@020d",
+          "0005: move-result-object v0",
+          "0006: invoke-virtual {v0}, Ljava/io/File;.getAbsolutePath:()Ljava/lang/String; // method@02e8",
+          "0009: move-result-object v1",
+          "000a: new-instance v2, Ldalvik/system/DexClassLoader; // type@009e",
+          "000c: invoke-virtual {v7}, Ljava/io/File;.getAbsolutePath:()Ljava/lang/String; // method@02e8",
+          "000f: move-result-object v3",
+          "0010: invoke-virtual {v8}, Ljava/io/File;.getAbsolutePath:()Ljava/lang/String; // method@02e8",
+          "0013: move-result-object v4",
+          "0014: invoke-direct {v2, v3, v1, v4, v9}, Ldalvik/system/DexClassLoader;.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V // method@02dd",
+          "0017: invoke-static {v2, v9, v8}, Lcom/didi/virtualapk/internal/utils/DexUtil;.insertDex:(Ldalvik/system/DexClassLoader;Ljava/lang/ClassLoader;Ljava/io/File;)V // method@0279",
+          "001a: return-object v2"
+        ],
+        "signature": "com.didi.virtualapk.internal.LoadedPlugin.createClassLoader:(Landroid/content/Context;Ljava/io/File;Ljava/io/File;Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader;"
+      },
+      {
+        "instruction_sha256": "a543bd19fac4b73e341805c1ec285ffbead836d4cac2dc043c578c20141a9d6a",
+        "instructions": [
+          "0000: invoke-static {v7}, Lcom/didi/virtualapk/internal/utils/DexUtil;.getPathList:(Ljava/lang/ClassLoader;)Ljava/lang/Object; // method@0278",
+          "0003: move-result-object v4",
+          "0004: invoke-static {v4}, Lcom/didi/virtualapk/internal/utils/DexUtil;.getDexElements:(Ljava/lang/Object;)Ljava/lang/Object; // method@0277",
+          "0007: move-result-object v1",
+          "0008: invoke-static {v6}, Lcom/didi/virtualapk/internal/utils/DexUtil;.getPathList:(Ljava/lang/ClassLoader;)Ljava/lang/Object; // method@0278",
+          "000b: move-result-object v4",
+          "000c: invoke-static {v4}, Lcom/didi/virtualapk/internal/utils/DexUtil;.getDexElements:(Ljava/lang/Object;)Ljava/lang/Object; // method@0277",
+          "000f: move-result-object v2",
+          "0010: invoke-static {v1, v2}, Lcom/didi/virtualapk/internal/utils/DexUtil;.combineArray:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@0276",
+          "0013: move-result-object v0",
+          "0014: invoke-static {v7}, Lcom/didi/virtualapk/internal/utils/DexUtil;.getPathList:(Ljava/lang/ClassLoader;)Ljava/lang/Object; // method@0278",
+          "0017: move-result-object v3",
+          "0018: invoke-static {v3}, Lcom/didi/virtualapk/utils/Reflector;.with:(Ljava/lang/Object;)Lcom/didi/virtualapk/utils/Reflector; // method@02cb",
+          "001b: move-result-object v4",
+          "001c: const-string v5, \"dexElements\" // string@02df",
+          "001e: invoke-virtual {v4, v5}, Lcom/didi/virtualapk/utils/Reflector;.field:(Ljava/lang/String;)Lcom/didi/virtualapk/utils/Reflector; // method@02bd",
+          "0021: move-result-object v4",
+          "0022: invoke-virtual {v4, v0}, Lcom/didi/virtualapk/utils/Reflector;.set:(Ljava/lang/Object;)Lcom/didi/virtualapk/utils/Reflector; // method@02c8",
+          "0025: invoke-static {v6, v7, v8}, Lcom/didi/virtualapk/internal/utils/DexUtil;.insertNativeLibrary:(Ldalvik/system/DexClassLoader;Ljava/lang/ClassLoader;Ljava/io/File;)V // method@027a",
+          "0028: return-void"
+        ],
+        "signature": "com.didi.virtualapk.internal.utils.DexUtil.insertDex:(Ldalvik/system/DexClassLoader;Ljava/lang/ClassLoader;Ljava/io/File;)V"
+      },
+      {
+        "instruction_sha256": "fdcf2c0909b412a7b3c62a75f428d23654ab1f3e3533f3b645b48254f21da73a",
+        "instructions": [
+          "0000: const/4 v5, #int 0 // #0",
+          "0001: invoke-virtual {v6}, Ljava/lang/Object;.getClass:()Ljava/lang/Class; // method@0307",
+          "0004: move-result-object v4",
+          "0005: invoke-virtual {v4}, Ljava/lang/Class;.getComponentType:()Ljava/lang/Class; // method@02f4",
+          "0008: move-result-object v1",
+          "0009: invoke-static {v6}, Ljava/lang/reflect/Array;.getLength:(Ljava/lang/Object;)I // method@0327",
+          "000c: move-result v0",
+          "000d: invoke-static {v7}, Ljava/lang/reflect/Array;.getLength:(Ljava/lang/Object;)I // method@0327",
+          "0010: move-result v3",
+          "0011: add-int v4, v0, v3",
+          "0013: invoke-static {v1, v4}, Ljava/lang/reflect/Array;.newInstance:(Ljava/lang/Class;I)Ljava/lang/Object; // method@0328",
+          "0016: move-result-object v2",
+          "0017: invoke-static {v6, v5, v2, v5, v0}, Ljava/lang/System;.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V // method@031f",
+          "001a: invoke-static {v7, v5, v2, v0, v3}, Ljava/lang/System;.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V // method@031f",
+          "001d: return-object v2"
+        ],
+        "signature": "com.didi.virtualapk.internal.utils.DexUtil.combineArray:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+      },
+      {
+        "instruction_sha256": "8412575585e26b59b28d5376aab82405309e1b9eebe1af6beb184317e45d83c3",
+        "instructions": [
+          "0000: array-length v2, v8",
+          "0001: add-int/lit8 v2, v2, #int 1 // #01",
+          "0003: new-array v1, v2, [B // type@0107",
+          "0005: const/4 v2, #int 0 // #0",
+          "0006: array-length v3, v8",
+          "0007: and-int/lit8 v3, v3, #int 31 // #1f",
+          "0009: and-int/lit16 v4, v7, #int 224 // #00e0",
+          "000b: and-int/2addr v3, v4",
+          "000c: int-to-byte v3, v3",
+          "000d: aput-byte v3, v1, v2",
+          "000f: const/4 v0, #int 1 // #1",
+          "0010: array-length v2, v1",
+          "0011: if-ge v0, v2, 001f // +000e",
+          "0013: add-int/lit8 v2, v0, #int -1 // #ff",
+          "0015: aget v2, v8, v2",
+          "0017: and-int/lit16 v2, v2, #int 255 // #00ff",
+          "0019: int-to-byte v2, v2",
+          "001a: aput-byte v2, v1, v0",
+          "001c: add-int/lit8 v0, v0, #int 1 // #01",
+          "001e: goto 0010 // -000e",
+          "001f: invoke-static {v5, v6, v1}, Lcom/canbus/utils/ToolClass;.sendDataToSerial:(Landroid/os/ICanbusService;Landroid/content/Context;[B)V // method@0416",
+          "0022: return-void"
+        ],
+        "signature": "com.canbus.utils.ToolClass.sendBroadcast_38406:(Landroid/os/ICanbusService;Landroid/content/Context;I[I)V"
+      }
+    ],
+    "resolution": "host first: standard DexClassLoader(parent), host dex elements precede appended plugin elements",
+    "verdict": "host and plugin BOTH use AND; classloader precedence cannot correct TX"
+  },
+  "inputs": {
+    "dex_sha256": "ea2804ca070ea94f6f01ad9411ebab4adf8114f770f84de4cc9f48394744956f",
+    "host_sha256": "65eabc191562b5f979d0924108f03df75c512446939507e4a95844fc26961bcf",
+    "host_size": 6083370,
+    "inventory_sha256": "7ac7956789cc4b4737e2aafdf6515c3f266904b773258a9f4aa7175a1ca85311",
+    "plugin_sha256": "9fb1dec410ef4f2f6783fae8e4303c65da7c0370bd29d06245c13e35d11c196e",
+    "plugin_size": 304868
+  },
+  "plugin": "2/1/P1_301.apk",
+  "prior_art": [
+    "archive/reference/device12/hardware/xyauto_can/README.md:36",
+    "docs/research/2026-09-15-can-vag-native-port.md",
+    "can/generated/vag-linkage.json"
+  ],
+  "profiles": [
+    {
+      "apk_sha256": "9fb1dec410ef4f2f6783fae8e4303c65da7c0370bd29d06245c13e35d11c196e",
+      "bandrate": 38406,
+      "baud": 38400,
+      "brand_id": "1",
+      "controls": [
+        {
+          "group": "Steering wheel",
+          "id": "steering.key_code",
+          "kind": "readout",
+          "label": "Steering wheel key code",
+          "rx_end_bit": 7,
+          "rx_index": 2,
+          "rx_length": 6,
+          "rx_min_length": false,
+          "rx_start_bit": 0,
+          "rx_type": 0,
+          "source_asset": "classes.dex",
+          "source_method": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V",
+          "source_pointer": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V",
+          "source_sha256": "617ceff5dd80ca7a35db97240c86d6a0a3983fd7eb4947a854756b9b478c9066"
+        }
+      ],
+      "envelope": "xinpu-aa55-packed-rx",
+      "key_decoder": {
+        "data_type": 0,
+        "exact_payload_length": 6,
+        "key_index": 2,
+        "mappings": [
+          {
+            "code": 1,
+            "label": "volume-up",
+            "oem_key": 12
+          },
+          {
+            "code": 2,
+            "label": "volume-down",
+            "oem_key": 13
+          },
+          {
+            "code": 3,
+            "label": "phone",
+            "oem_key": 15
+          },
+          {
+            "code": 4,
+            "label": "mute",
+            "oem_key": 5
+          },
+          {
+            "code": 5,
+            "label": "forward",
+            "oem_key": 10
+          },
+          {
+            "code": 6,
+            "label": "backward",
+            "oem_key": 11
+          },
+          {
+            "code": 7,
+            "label": "source",
+            "oem_key": 7
+          }
+        ],
+        "native_injection_implemented": false,
+        "state": {
+          "constant": 1
+        },
+        "state_semantics": "DOWN1/LONG2 processed; UP0 does not inject; OEM optional key swaps precede delivery",
+        "unknown_key": "ignore"
+      },
+      "maker_id": "2",
+      "physical_verified": false,
+      "plugin": "2/1/P1_301.apk",
+      "selection_id": "2001001",
+      "tx_supported": false,
+      "unresolved": [
+        "native key injection and optional OEM key swaps",
+        "automatic startup/ACC handshake",
+        "media/phone/volume reporting requires runtime event integration, not vehicle-setting controls"
+      ],
+      "user_constants": [
+        "XinPu_Audi_A3"
+      ]
+    },
+    {
+      "apk_sha256": "9fb1dec410ef4f2f6783fae8e4303c65da7c0370bd29d06245c13e35d11c196e",
+      "bandrate": 38400,
+      "baud": 38400,
+      "brand_id": "1",
+      "controls": [
+        {
+          "group": "Steering wheel",
+          "id": "steering.key_code",
+          "kind": "readout",
+          "label": "Steering wheel key code",
+          "rx_end_bit": 7,
+          "rx_index": 0,
+          "rx_length": 2,
+          "rx_min_length": false,
+          "rx_start_bit": 0,
+          "rx_type": 32,
+          "source_asset": "classes.dex",
+          "source_method": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_pointer": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193"
+        },
+        {
+          "group": "Steering wheel",
+          "id": "steering.key_state",
+          "kind": "readout",
+          "label": "Steering wheel key state",
+          "rx_end_bit": 7,
+          "rx_index": 1,
+          "rx_length": 2,
+          "rx_min_length": false,
+          "rx_start_bit": 0,
+          "rx_type": 32,
+          "source_asset": "classes.dex",
+          "source_method": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_pointer": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V",
+          "source_sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193"
+        }
+      ],
+      "envelope": "raise-2e",
+      "key_decoder": {
+        "data_type": 32,
+        "exact_payload_length": 2,
+        "key_index": 0,
+        "mappings": [
+          {
+            "code": 1,
+            "label": "volume-up",
+            "oem_key": 12
+          },
+          {
+            "code": 2,
+            "label": "volume-down",
+            "oem_key": 13
+          },
+          {
+            "code": 3,
+            "label": "forward",
+            "oem_key": 10
+          },
+          {
+            "code": 19,
+            "label": "forward",
+            "oem_key": 10
+          },
+          {
+            "code": 4,
+            "label": "backward",
+            "oem_key": 11
+          },
+          {
+            "code": 20,
+            "label": "backward",
+            "oem_key": 11
+          },
+          {
+            "code": 5,
+            "label": "phone",
+            "oem_key": 15
+          },
+          {
+            "code": 6,
+            "label": "mute",
+            "oem_key": 5
+          },
+          {
+            "code": 7,
+            "label": "source",
+            "oem_key": 7
+          },
+          {
+            "code": 8,
+            "label": "voice",
+            "oem_key": 80
+          },
+          {
+            "code": 22,
+            "label": "fm-scan",
+            "oem_key": 22
+          }
+        ],
+        "native_injection_implemented": false,
+        "state": {
+          "index": 1
+        },
+        "state_semantics": "DOWN1/LONG2 processed; UP0 does not inject; OEM optional key swaps precede delivery",
+        "unknown_key": "ignore"
+      },
+      "maker_id": "2",
+      "physical_verified": false,
+      "plugin": "2/1/P1_301.apk",
+      "selection_id": "2001002",
+      "tx_supported": true,
+      "unresolved": [
+        "native key injection and optional OEM key swaps",
+        "automatic startup/ACC handshake",
+        "media/phone/volume reporting requires runtime event integration, not vehicle-setting controls"
+      ],
+      "user_constants": [
+        "XinPu_Audi_RP5_A3"
+      ]
+    }
+  ],
+  "schema": 1,
+  "scope": "XinPu Audi only; declarative software facts, physical acceptance unverified",
+  "source_absences": {
+    "a3": "no selected JSON assets; built-in steering decoder is present",
+    "rp5": "six door JSON fields already ported; trajectory handler has no effect; no vehicle amplifier control implementation found",
+    "startup": "sendCanbusAck emits81[01] both models;38406 helper corrupts packed byte, so do not issue it"
+  },
+  "sources": {
+    "CanbusBack_P.xinpu_Audi_RP5_TraData": {
+      "sha256": "89ef443e0a00d55d0d342b0dbb96ad71dd60dab3a2fef7ebe761be5cf4f023aa",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusBack_P.xinpu_Audi_RP5_TraData:([B)V"
+    },
+    "CanbusBluetooth_P.phoneCall": {
+      "sha256": "7a62e1fd7c3e19b432c15825cfea594d7b25dc63573e060ed3f811967bc6d1e8",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusBluetooth_P.phoneCall:(Landroid/bluetooth/BluetoothHeadsetClientCall;)V"
+    },
+    "CanbusBluetooth_P.xinPu_Audi_RP5_A3_PhoneState": {
+      "sha256": "8d47fcbee20eb960c455eb152338e3f8d479d2b09c57df3eec7e0af056a3ac03",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusBluetooth_P.xinPu_Audi_RP5_A3_PhoneState:(I)V"
+    },
+    "CanbusConfig_P.getBaudRate": {
+      "sha256": "21c8f10d1d95596458d9067d44fff50ef0af3d3e952d70d16826d2ffa1cce017",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusConfig_P.getBaudRate:()I"
+    },
+    "CanbusConfig_P.loadConfig": {
+      "sha256": "25e446b98b578e8f3b0e267593e612f23a9fb550cecfc16c6eba756567896ba7",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusConfig_P.loadConfig:()V"
+    },
+    "CanbusKey_P.RxKey": {
+      "sha256": "c24a3a9a9b7f8281ec4be8e56c6d46a1018c0cde0e10e1869a7a95984a6730c6",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.RxKey:([B)V"
+    },
+    "CanbusKey_P.keySwap": {
+      "sha256": "031de2a326aeaf1ccaed4872cf794a6eda1fdc1bd64211df6f9cda0d6105c652",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.keySwap:(I)I"
+    },
+    "CanbusKey_P.sendKey": {
+      "sha256": "d182ea49f1baefdafecfda8f229ec63d1b2f07d673fd94ff75715adea663e67d",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.sendKey:(II)V"
+    },
+    "CanbusKey_P.xinPu_Audi_A3_Key": {
+      "sha256": "617ceff5dd80ca7a35db97240c86d6a0a3983fd7eb4947a854756b9b478c9066",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_A3_Key:([B)V"
+    },
+    "CanbusKey_P.xinPu_Audi_RP5_A3_Key": {
+      "sha256": "92c0c4db44c7ec279a65647ae37aef994b6f8523068575618280473abafa0193",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusKey_P.xinPu_Audi_RP5_A3_Key:([B)V"
+    },
+    "CanbusPattern_P.RxMode": {
+      "sha256": "dfa9f2fc86813332d0d13a9f1af50ca6516b9e2d4cc1050af5ec6507e7373800",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.RxMode:([Ljava/lang/String;)V"
+    },
+    "CanbusPattern_P.RxSound": {
+      "sha256": "1ae76c16d357ff9a99d1e4ecfb3d5a70c02e50d1bb80b4ba952313b247b4f0a0",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.RxSound:()V"
+    },
+    "CanbusPattern_P.sendCanbusAck": {
+      "sha256": "c1c8693039df1b660b730860db6ee5c3a5a2c46a280d25972b733fc4568521c5",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.sendCanbusAck:()V"
+    },
+    "CanbusPattern_P.xinPu_Audi_RP5_A3_Media_Mode": {
+      "sha256": "b99c1652aee6b33491735ba618998d4feff21fa82a20ee12f9006eaee7c8f18b",
+      "signature": "com.kyhero.car.myplugin.canbus.CanbusPattern_P.xinPu_Audi_RP5_A3_Media_Mode:([Ljava/lang/String;)V"
+    },
+    "CanbusSerial.xp_rx_uart_aa55": {
+      "sha256": "59b6934d2680e85064a95612b5c055321e15e959a0a5e9d0bb59270c21dcc2a5",
+      "signature": "com.canbus.data.CanbusSerial.xp_rx_uart_aa55:()V"
+    },
+    "ToolClass.sendBroadcast_38406": {
+      "sha256": "3117fd7a54b4ce3de9520e103e61d4f91855c2ada21be1e37828f3874ff8edf9",
+      "signature": "com.canbus.utils.ToolClass.sendBroadcast_38406:(Landroid/os/ICanbusService;Landroid/content/Context;I[I)V"
+    },
+    "ToolClass.sendDataToSerial": {
+      "sha256": "3cc20eac5e5659b43d00c6989eb1779208a41cc923b5987a5db28751d0c4eb29",
+      "signature": "com.canbus.utils.ToolClass.sendDataToSerial:(Landroid/os/ICanbusService;Landroid/content/Context;[B)V"
+    }
+  }
+}

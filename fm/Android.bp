@@ -1,0 +1,66 @@
+// Copyright (C) 2026 The XYAUTO device-3 project
+// SPDX-License-Identifier: Apache-2.0
+//
+// Library only: D18 has one process, bengal-hud. This module is linked into
+// that daemon; it is not an independent FM process. Android Soong compilation
+// remains a build-window gate.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+soong_config_module_type {
+    name: "bengal_fm_optional_rust_defaults",
+    module_type: "rust_defaults",
+    config_namespace: "bengal_hud",
+    bool_variables: ["acc_power_channel"],
+    properties: ["features"],
+}
+
+bengal_fm_optional_rust_defaults {
+    name: "bengal_fm_acc_power_defaults",
+    soong_config_variables: {
+        acc_power_channel: {
+            features: ["acc-power-channel"],
+        },
+    },
+}
+
+rust_library {
+    name: "libxyauto_fm",
+    defaults: ["bengal_fm_acc_power_defaults"],
+    crate_name: "xyauto_fm",
+    srcs: ["src/lib.rs"],
+    edition: "2021",
+    vendor: true,
+    // This is the FM counterpart of the rust_library/rust_binary split in
+    // platform/hardware/xyauto/hud/Android.bp. Default Cargo has neither
+    // Android dependency. Soong enables the real I2C port plus Binder adapter;
+    // aidl_interface.backend.rust generates vendor.xyauto.fm-V1-rust (there is
+    // no handwritten rust_aidl_library in this Android 17 tree).
+    features: [
+        "binder",
+        "linux-i2c",
+    ],
+    rustlibs: [
+        "libbinder_rs",
+        "vendor.xyauto.fm-V1-rust",
+    ],
+}
+
+rust_test_host {
+    name: "libxyauto_fm_test",
+    crate_name: "xyauto_fm",
+    srcs: ["src/lib.rs"],
+    edition: "2021",
+    test_options: {
+        unit_test: true,
+    },
+}
+
+// D18 intentionally has no second FM rust_binary. The owning rust_binary is
+// `bengal-hud` in platform/hardware/xyauto/hud/Android.bp; it links this module,
+// supplies the one composite MCU/DSP/GPIO/QN8035 owner, and must call
+// attempt xyauto_fm::binder::register() before it registers the HUD service
+// and starts MCU capture. FM registration failure is logged and nonfatal, so
+// the executable ordering must preserve IHud and the MCU reader.

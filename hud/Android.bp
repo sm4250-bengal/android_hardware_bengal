@@ -1,0 +1,135 @@
+// Copyright (C) 2026 The XYAUTO device-3 project
+// SPDX-License-Identifier: Apache-2.0
+//
+// bengal-hud — the D18 vendor daemon. device.mk packages the binary and copies
+// its rc; this module contributes the VINTF fragment. The measured vendor image
+// contains all three as regular files. Production physical USB ownership is
+// documented in docs/research/2026-09-01-usb-hog-daemon.md.
+//
+// Built successfully by Soong on 2026-08-31. Host Cargo tests remain the fast
+// desk gate; a new Android build is still required after any product-policy or
+// rc change to prove those new bytes ship.
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+// Unset/false contributes neither channel code nor its AIDL dependency. The
+// product sets bengal_hud.acc_power_channel only for its explicit selection.
+soong_config_module_type {
+    name: "bengal_hud_optional_rust_defaults",
+    module_type: "rust_defaults",
+    config_namespace: "bengal_hud",
+    bool_variables: ["acc_power_channel"],
+    properties: ["features", "rustlibs"],
+}
+
+bengal_hud_optional_rust_defaults {
+    name: "bengal_hud_acc_power_defaults",
+    soong_config_variables: {
+        acc_power_channel: {
+            features: ["acc-power-channel"],
+            rustlibs: ["vendor.xyauto.accpower-V1-rust"],
+        },
+    },
+}
+
+// The hardware core. Also builds and tests standalone with `cargo` — see
+// Cargo.toml, which is a desk convenience and is NOT read by Soong.
+rust_library {
+    name: "libbengal_hud",
+    defaults: ["bengal_hud_acc_power_defaults"],
+    crate_name: "bengal_hud",
+    // include_str! inputs must be declared: the default Rust source discovery
+    // includes .rs/.h/.md, not .toml. Siso rejects undeclared runtime profiles.
+    crate_root: "src/lib.rs",
+    srcs: ["src/lib.rs", "can/generated/controls.toml"],
+    edition: "2021",
+    vendor: true,
+
+    // The default Cargo build has neither dependency and leaves `binder` off.
+    // Soong enables the Android-only adapter explicitly. There is no separate
+    // handwritten `rust_aidl_library` module in this Android 17 tree:
+    // aidl_interface.backend.rust generates vendor.xyauto.hud-V3-rust, which
+    // is the rustlib below (same shape as hardware/interfaces/uwb/aidl).
+    features: ["binder", "dsp-v2", "dsp-v3", "dsp-v4"],
+    rustlibs: [
+        // The HUD process registers the declared IFmRadio service with the
+        // Phase-4c-not-ready backend before it joins Binder for IHud.
+        "libxyauto_dsp",
+        "libxyauto_fm",
+        "libbinder_rs",
+        "vendor.xyauto.audio-V3-rust",
+        "vendor.xyauto.can-V4-rust",
+        "vendor.xyauto.dsp-V4-rust",
+        "vendor.xyauto.hud-V3-rust",
+    ],
+}
+
+// Host-side unit tests, the same ones `cargo test` runs. Keep the count out of
+// this build file: the protocol fixture suite grows independently.
+// `rust_test_host` so they need no device and no emulator: this is desk work
+// that happens to also run in CI.
+rust_test_host {
+    name: "libbengal_hud_test",
+    crate_name: "bengal_hud",
+    crate_root: "src/lib.rs",
+    srcs: ["src/lib.rs", "can/**/*.toml", "tools/decoder-agreement.golden"],
+    edition: "2021",
+    test_options: {
+        unit_test: true,
+    },
+}
+
+// The daemon. Cargo compiles an inert default-feature main; Soong enables the
+// Android-only Binder entry point and supplies all generated/platform crates.
+rust_binary {
+    name: "bengal-hud",
+    defaults: ["bengal_hud_acc_power_defaults"],
+    crate_name: "bengal_hud_bin",
+    srcs: ["src/main.rs"],
+    edition: "2021",
+    vendor: true,
+    relative_install_path: "hw",
+    features: ["binder", "dsp-v2", "dsp-v3", "dsp-v4"],
+
+    // prefer_rlib, as the uwb HAL does: a vendor binary that static-links its
+    // Rust deps has no dylib search-path question at boot, and this daemon
+    // starts before most of /vendor is interesting.
+    prefer_rlib: true,
+
+    rustlibs: [
+        "libbengal_hud",
+        "libxyauto_dsp", // ADAU1701 readback core; HUD owns the transport
+        "libxyauto_fm", // QN8035 core + IFmRadio Binder adapter
+        "libbinder_rs", // frameworks/native/libs/binder/rust, vendor_available
+        "liblogger", // system/logging/rust
+        "liblog_rust", // external/rust/android-crates-io/crates/log
+        "vendor.xyauto.fm-V1-rust", // generated from platform/interfaces
+        "vendor.xyauto.audio-V3-rust", // typed /dev/hu-audio-guard owner
+        "vendor.xyauto.dsp-V4-rust", // typed controls and shared output calibration
+        "vendor.xyauto.hud-V3-rust", // ACC, key, USB and GPIO service
+    ],
+    shared_libs: [
+        "liblog", // __android_log_write: every MCU frame also reaches logcat
+    ],
+
+    // ⚠ NO init_rc: HERE. MEASURED 2026-08-31: init_rc, like prebuilt_etc,
+    // INSTALLS THE SYMLINK rather than the content, and our sources are reached
+    // through mirror-device-tree.sh's one-symlink-per-file mirror. The result in
+    // vendor.img was /vendor/etc/init/bengal-hud.rc as a DANGLING absolute link
+    // to a /home/meinte/... host path, so init never read it and this service
+    // never started. Read out of the ext4 with debugfs, not from the staging
+    // tree -- staging shows a symlink either way.
+    //
+    // The rc therefore ships via PRODUCT_COPY_FILES in device.mk, which
+    // dereferences. It cannot ALSO ride init_rc: two rules installing one path
+    // is the "overriding commands for target" build failure we already hit with
+    // skip_mount.cfg, so this property is removed rather than duplicated.
+    //
+    // This deliberately departs from rootdir/Android.bp's "rc files that belong
+    // to a module ride that module's init_rc:" convention. That convention was
+    // written before the symlink behaviour was known; it is unusable for any
+    // source reached through the mirror, which is all of ours.
+    vintf_fragments: ["bengal-hud.xml"],
+}

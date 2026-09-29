@@ -1,0 +1,29 @@
+// Desk harness for platform/scripts/fm-backend-desk-test.sh -- NOT read by
+// Soong. The HUD I2C module and the production QN8035 backend (both compiled
+// inside libbengal_hud in the Android build) are grafted into this bin crate
+// and compiled against the xyauto_fm rlib metadata at the Soong vendor lint
+// level. `pub mod`, deliberately: on rustc 1.88 pub-in-pub-mod is live in a bin
+// crate exactly as in the rlib, so the exported surface passes and a PRIVATE
+// unused item in either file fails dead_code as it would in Soong. No allow()
+// here -- every diagnostic is a production diagnostic. The two crate-root
+// attributes are hud/src/lib.rs:43-44 verbatim (this file is its own crate
+// root; without them an undocumented pub fn or an unsafe op in an unsafe fn
+// passed here and failed the rlib -- measured); the suite pins them.
+#![deny(unsafe_op_in_unsafe_fn)]
+#![warn(missing_docs)]
+//! desk harness
+/// grafted
+#[path = "@HUD_I2C@"]
+pub mod i2c;
+
+/// grafted -- the backend's diagnostic sink, and dependency-free on purpose.
+#[path = "@HUD_LOGSINK@"]
+pub mod logsink;
+
+/// grafted
+pub mod fm {
+    #[path = "@BACKEND@"]
+    pub mod backend;
+}
+
+fn main() {}

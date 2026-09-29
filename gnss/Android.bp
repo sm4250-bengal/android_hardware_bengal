@@ -1,0 +1,11 @@
+// Standalone native LOC provider, manually built until the device product opts in.
+cc_binary {
+    name: "android.hardware.gnss-service.bengal",
+    vendor: true,
+    relative_install_path: "hw",
+    vintf_fragments: ["bengal-gnss.xml"],
+    srcs: ["service.cpp", "Gnss.cpp", "Extensions.cpp"],
+    static_libs: ["libbengal_loc"],
+    shared_libs: ["android.hardware.gnss-V7-ndk", "libbinder_ndk", "liblog", "libqrtr"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}

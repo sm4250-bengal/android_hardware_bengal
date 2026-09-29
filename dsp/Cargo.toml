@@ -1,0 +1,20 @@
+# DESK ONLY. Android builds read Android.bp.
+
+[package]
+name = "xyauto_dsp"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+license = "Apache-2.0"
+description = "Binder-independent ADAU1701 parameter-RAM core for XYAUTO device 3"
+
+[lib]
+name = "xyauto_dsp"
+path = "src/lib.rs"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
